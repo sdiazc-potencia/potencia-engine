@@ -9,10 +9,11 @@ engine/                  ← scripts genéricos (render, subidas, publicación)
 clientes/<cliente>/      ← todo lo específico de una marca
 ├── cliente.md           ← ficha: handle, web, audiencia, paleta, credenciales/IDs
 ├── prompt_maestro.md    ← voz, tono y reglas de contenido
+├── contexto/            ← contexto vivo: resúmenes de reuniones (reuniones/YYYY-MM-DD-tema.md), briefs, campañas vigentes
 ├── design/              ← brand.css (tokens), fonts.css, patrones/, stickers/, favicons/
 ├── temas.csv            ← backlog de temas (tipo,horario,tema; # = usado/comentado)
 └── posts/<fecha>/<slug>/ ← output generado (HTML + post.json en git; PNG no)
-.claude/skills/          ← /post, /ideas, /generar-diario (reciben cliente como parámetro)
+.claude/skills/          ← /post, /ideas, /generar-diario, /nueva-marca (reciben cliente como parámetro)
 ```
 
 ## Convenciones
@@ -23,15 +24,12 @@ clientes/<cliente>/      ← todo lo específico de una marca
   cd clientes/<cliente> && node ../../engine/renderizar_slides.js --carpeta posts/<fecha>/<slug>
   ```
 - Los HTML de slides referencian el design system con `../../../design/...` (relativo a `posts/<fecha>/<slug>/`) — no cambiar esa profundidad de carpetas.
-- **Identidad de marca innegociable**: solo colores de la paleta del cliente vía variables CSS de su `brand.css`; partir siempre de sus `design/patrones/`.
+- **Identidad de marca innegociable**: solo colores de la paleta del cliente vía variables CSS de su `brand.css`; partir siempre de sus `design/patrones/`. Todos los `brand.css` comparten los mismos nombres de clases/componentes — entre marcas cambia la estética, no la API.
+- **Antes de generar contenido**, revisar `clientes/<cliente>/contexto/` (reuniones recientes, briefs, campañas vigentes). Lo más reciente manda sobre el prompt maestro.
 - **Nunca publicar en Instagram sin aprobación humana explícita** ("publicalo").
 - Credenciales (Cloudinary, Meta, rclone) son **por máquina** (variables de entorno), nunca van al repo.
 - Los PNG generados no se commitean (ver `.gitignore`); se comparten por Drive/Cloudinary. Sí se commitean HTML y `post.json`.
 
 ## Alta de un cliente nuevo
 
-1. Crear `clientes/<slug>/` copiando la estructura de `clientes/potencia/`.
-2. Reemplazar `cliente.md` y `prompt_maestro.md` con la ficha y voz del cliente nuevo.
-3. Adaptar `design/brand.css` con la paleta/tipografía de su manual de marca y regenerar los patrones de `design/patrones/` con esos tokens (misma estructura HTML, tokens nuevos).
-4. Verificar con un render de prueba: `cd clientes/<slug> && node ../../engine/renderizar_slides.js --carpeta design/patrones --salida design/preview`.
-5. Crear su `temas.csv` vacío y, si corresponde, su proyecto en Claude Design.
+Correr la skill `/nueva-marca` — pide el manual de marca, genera estructura + design system + voz, y verifica con render de prueba. El paso a paso completo vive en `.claude/skills/nueva-marca/SKILL.md`.

@@ -22,6 +22,7 @@ En adelante, `<C>` = `clientes/<cliente>`.
 Leé (si no los tenés ya en contexto):
 - `<C>/cliente.md` — ficha del cliente: handle de Instagram, web, audiencia, paleta, formato.
 - `<C>/prompt_maestro.md` — la voz, tono y reglas de contenido de la marca. **Respetalo siempre.**
+- Si existe `<C>/contexto/`, mirá lo más reciente (resúmenes de reuniones, briefs, campañas vigentes) — manda sobre el prompt maestro si contradicen.
 - `<C>/design/brand.css` — tokens y componentes disponibles.
 - 2 o 3 archivos de `<C>/design/patrones/` — patrones de referencia de slides.
 
