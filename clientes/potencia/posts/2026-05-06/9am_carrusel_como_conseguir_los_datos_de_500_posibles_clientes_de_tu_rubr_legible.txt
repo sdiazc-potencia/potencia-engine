@@ -1,0 +1,43 @@
+═══════════════════════════════════════
+TEMA: Cómo conseguir los datos de 500 posibles clientes de tu rubro en Google Maps (sin hacerlo a mano)
+TIPO: CARRUSEL | HORARIO: 9am
+═══════════════════════════════════════
+
+── SLIDES ──
+
+Slide 1:
+Slide 1 — GANCHO: Hay 500 clientes potenciales en Google Maps. Los estás ignorando.
+
+Slide 2:
+Slide 2 — VALOR: **Buscalos por rubro y zona**
+Google Maps tiene listados de negocios con nombre, teléfono y web. El problema no es que no estén. Es que copiarlos a mano te lleva días enteros.
+
+Slide 3:
+Slide 3 — VALOR: **Existe una forma de hacerlo automático**
+Con scraping podés extraer esos datos en minutos: nombre del negocio, teléfono, dirección, calificación, sitio web. Todo en una planilla lista para usar.
+
+Slide 4:
+Slide 4 — VALOR: **Filtrá antes de contactar**
+No todos los resultados sirven. Podés filtrar por calificación, cantidad de reseñas o palabras clave. Así llegás solo a los que tienen perfil de cliente real.
+
+Slide 5:
+Slide 5 — VALOR: **Con esa lista, el siguiente paso es automático**
+Una vez que tenés los contactos, podés armar una secuencia de WhatsApp o email con un agente de IA que haga el primer contacto por vos. Sin llamadas en frío, sin horas pegado al teléfono.
+
+Slide 6:
+Slide 6 — CIERRE: ¿Cuántos prospectos calificados tenés hoy en tu base de datos? Si la respuesta es 'pocos' o 'ninguno', este proceso cambia eso en menos de una semana.
+
+Slide 7:
+Slide 7 — CTA SUAVE: En potencIA hacemos este proceso completo: scraping, limpieza de datos y difusión automatizada por WhatsApp. En menos de una semana tenés una base activa y un agente haciendo el primer contacto. Si querés saber cómo aplica a tu rubro, escribinos por DM.
+
+── CAPTION ──
+Hay 500 clientes potenciales en Google Maps. Los estás ignorando.
+
+Cualquier negocio de tu rubro está listado ahí: nombre, teléfono, web, ubicación. El problema no es conseguir los datos. Es que hacerlo a mano no escala.
+
+Con scraping + automatización, ese trabajo de días se convierte en minutos. Y con un agente de IA encima, el primer contacto lo hace solo.
+
+¿Tu equipo está buscando prospectos a mano hoy? Contanos en los comentarios cómo lo hacen.
+
+── HASHTAGS ──
+#potencIA #automatizacion #inteligenciaartificial #prospectingdigital #ventas #pymes #whatsappmarketing #googleMaps

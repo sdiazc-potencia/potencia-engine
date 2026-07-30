@@ -1,0 +1,9 @@
+node_modules/
+
+# Los PNG de posts generados no van a git (viven en Drive/Cloudinary).
+# El HTML + post.json sí se versionan: cualquiera puede re-renderizar.
+clientes/*/posts/**/*.png
+
+# Credenciales y config local
+.env
+*.local.json

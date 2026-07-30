@@ -1,0 +1,400 @@
+/*
+ * potencIA — Design system para carruseles de Instagram
+ * Fuente: manual de marca oficial (PDF) — paleta y tipografía reales.
+ *
+ * Colores oficiales:
+ *   #0D0C2B  navy casi negro (fondo principal)
+ *   #3B1E76  violeta profundo (fondo alternativo / bloques)
+ *   #C198F8  lavanda (acento, palabras destacadas, "IA" del logo)
+ *   #8D52FF  violeta vivo (acento fuerte, gráficos, botones)
+ *
+ * Tipografía: DM Sans (regular 400, italic, medium 500, bold 700, extrabold 800)
+ * Formato slide: 1080 × 1350 px (4:5 feed Instagram)
+ */
+
+:root {
+  /* Colores */
+  --navy: #0d0c2b;
+  --violeta: #3b1e76;
+  --lavanda: #c198f8;
+  --violeta-vivo: #8d52ff;
+  --blanco: #f2effa;
+  --texto-suave: #b6aed4;
+  --naranja-glow: #e8813a; /* solo para glows de fondo, como en el manual */
+
+  /* Alias semánticos */
+  --color-fondo: var(--navy);
+  --color-texto: var(--blanco);
+  --color-acento: var(--lavanda);
+  --color-acento-fuerte: var(--violeta-vivo);
+
+  /* Tipografía */
+  --fuente: "DM Sans", "Segoe UI", -apple-system, sans-serif;
+  --texto-gancho: 88px;    /* hook de portada */
+  --texto-titulo: 60px;    /* título de slide */
+  --texto-subtitulo: 42px;
+  --texto-cuerpo: 36px;
+  --texto-card-titulo: 32px;
+  --texto-card-cuerpo: 26px;
+  --texto-meta: 26px;      /* kicker, contador, footer */
+
+  /* Layout */
+  --slide-ancho: 1080px;
+  --slide-alto: 1350px;
+  --pad: 88px;
+  --radio: 28px;
+  --radio-chico: 18px;
+}
+
+/* ── Base ──────────────────────────────────────────────────────────────── */
+
+html, body { margin: 0; padding: 0; }
+
+.slide {
+  width: var(--slide-ancho);
+  height: var(--slide-alto);
+  box-sizing: border-box;
+  padding: var(--pad);
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--fuente);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.slide > * { position: relative; z-index: 2; }
+
+/* ── Fondos: glow con grano (estética del manual) ─────────────────────── */
+/* Capa de degradado radial + capa de ruido. Usar dentro de .slide.       */
+
+.glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.glow::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(ellipse 700px 900px at 85% 20%, rgba(141, 82, 255, 0.55), transparent 65%),
+    radial-gradient(ellipse 800px 700px at 10% 85%, rgba(193, 152, 248, 0.35), transparent 60%);
+}
+.glow.calido::before {
+  background:
+    radial-gradient(ellipse 700px 900px at 88% 15%, rgba(141, 82, 255, 0.5), transparent 60%),
+    radial-gradient(ellipse 600px 600px at 8% 90%, rgba(232, 129, 58, 0.38), transparent 55%),
+    radial-gradient(ellipse 500px 700px at 20% 30%, rgba(193, 152, 248, 0.25), transparent 60%);
+}
+.glow.sutil::before { opacity: 0.5; }
+/* Grano: SVG feTurbulence en data-uri, como la textura del manual */
+.glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/><feColorMatrix type='saturate' values='0'/></filter><rect width='300' height='300' filter='url(%23n)' opacity='0.5'/></svg>");
+  background-size: 300px 300px;
+  opacity: 0.16;
+  mix-blend-mode: overlay;
+}
+
+/* ── Logo / wordmark ──────────────────────────────────────────────────── */
+
+.wordmark {
+  font-family: var(--fuente);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--blanco);
+  font-size: 40px;
+}
+.wordmark .ia { color: var(--lavanda); }
+
+/* Footer estándar: wordmark centrado abajo, como en el manual */
+.footer-marca {
+  position: absolute;
+  bottom: 56px;
+  left: 0; right: 0;
+  text-align: center;
+  z-index: 2;
+}
+
+/* ── Texto ────────────────────────────────────────────────────────────── */
+
+.gancho {
+  font-size: var(--texto-gancho);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.titulo {
+  font-size: var(--texto-titulo);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.cuerpo {
+  font-size: var(--texto-cuerpo);
+  font-weight: 400;
+  line-height: 1.42;
+  color: var(--texto-suave);
+  margin: 0;
+}
+.cuerpo strong, .cuerpo b { color: var(--blanco); font-weight: 700; }
+
+/* Palabra acentuada en lavanda (como "no herramientas sueltas.") */
+.acento { color: var(--lavanda); }
+.acento-italic { color: var(--lavanda); font-style: italic; }
+
+/* Highlight: barra lavanda detrás del texto (como "sin letra chica.") */
+.highlight {
+  background: var(--lavanda);
+  color: var(--navy);
+  padding: 2px 18px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Kicker editorial: "01 / 05 — EL PROBLEMA" */
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: var(--texto-meta);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+.kicker .num {
+  background: rgba(193, 152, 248, 0.18);
+  color: var(--lavanda);
+  padding: 6px 16px;
+  border-radius: 8px;
+  letter-spacing: 0.1em;
+}
+
+/* ── Pills y tags ─────────────────────────────────────────────────────── */
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--texto-meta);
+  font-weight: 700;
+  color: var(--blanco);
+  border: 2px solid rgba(242, 239, 250, 0.5);
+  border-radius: 999px;
+  padding: 14px 36px;
+}
+.pill.llena {
+  background: var(--violeta-vivo);
+  border-color: var(--violeta-vivo);
+}
+.tag-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.tag {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  border: 1.5px solid rgba(182, 174, 212, 0.4);
+  border-radius: 999px;
+  padding: 8px 20px;
+}
+.tag.activo {
+  color: var(--navy);
+  background: var(--lavanda);
+  border-color: var(--lavanda);
+}
+
+/* ── Cards (estilo lista numerada de las referencias) ─────────────────── */
+
+.card {
+  background: rgba(59, 30, 118, 0.35);
+  border: 1.5px solid rgba(193, 152, 248, 0.25);
+  border-radius: var(--radio-chico);
+  padding: 26px 32px;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+.card-lista { display: flex; flex-direction: column; gap: 22px; }
+.card .icono {
+  flex: none;
+  width: 76px; height: 76px;
+  border-radius: 50%;
+  background: var(--violeta-vivo);
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  font-weight: 800;
+}
+.card .icono.claro { background: var(--lavanda); color: var(--navy); }
+.card .contenido { flex: 1; min-width: 0; }
+.card .card-titulo {
+  font-size: var(--texto-card-titulo);
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+.card .card-sub {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--lavanda);
+  margin: 0 0 4px;
+  font-style: italic;
+}
+.card .card-texto {
+  font-size: var(--texto-card-cuerpo);
+  line-height: 1.35;
+  color: var(--texto-suave);
+  margin: 0;
+}
+.card .num-derecha {
+  flex: none;
+  font-size: 40px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--lavanda);
+}
+
+/* ── Datos y gráficos ─────────────────────────────────────────────────── */
+
+/* Número gigante para slide de dato/estadística */
+.stat {
+  font-size: 200px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: linear-gradient(100deg, var(--lavanda), var(--violeta-vivo));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+}
+.stat-label {
+  font-size: var(--texto-subtitulo);
+  font-weight: 700;
+  margin: 12px 0 0;
+}
+
+/* Gráfico de barras horizontales */
+.barras { display: flex; flex-direction: column; gap: 30px; }
+.barra-fila { display: flex; flex-direction: column; gap: 12px; }
+.barra-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 28px;
+  font-weight: 700;
+}
+.barra-head .valor { color: var(--lavanda); font-size: 32px; }
+.barra-track {
+  height: 34px;
+  background: rgba(59, 30, 118, 0.5);
+  border-radius: 17px;
+  overflow: hidden;
+}
+.barra-fill {
+  height: 100%;
+  border-radius: 17px;
+  background: linear-gradient(90deg, var(--violeta-vivo), var(--lavanda));
+}
+.barra-fill.apagada { background: rgba(182, 174, 212, 0.35); }
+
+/* Comparativa antes/después en dos paneles */
+.comparativa { display: flex; gap: 26px; flex: 1; }
+.panel {
+  flex: 1;
+  border-radius: var(--radio);
+  padding: 44px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: rgba(59, 30, 118, 0.35);
+  border: 1.5px solid rgba(193, 152, 248, 0.2);
+}
+.panel.destacado {
+  background: linear-gradient(160deg, rgba(141, 82, 255, 0.35), rgba(59, 30, 118, 0.5));
+  border-color: var(--violeta-vivo);
+}
+.panel .panel-titulo {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.panel ul {
+  margin: 0;
+  padding: 0 0 0 8px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.panel li {
+  font-size: 27px;
+  line-height: 1.35;
+  color: var(--texto-suave);
+  display: flex;
+  gap: 14px;
+}
+.panel li::before { content: "✕"; color: rgba(182, 174, 212, 0.7); font-weight: 700; }
+.panel.destacado li { color: var(--blanco); }
+.panel.destacado li::before { content: "✓"; color: var(--lavanda); }
+
+/* Flujo / diagrama de pasos conectados */
+.flujo { display: flex; flex-direction: column; align-items: center; gap: 0; }
+.nodo {
+  background: rgba(59, 30, 118, 0.45);
+  border: 1.5px solid rgba(193, 152, 248, 0.35);
+  border-radius: var(--radio-chico);
+  padding: 24px 40px;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+}
+.nodo.destacado { background: var(--violeta-vivo); border-color: var(--violeta-vivo); }
+.conector {
+  width: 3px; height: 44px;
+  background: linear-gradient(180deg, var(--lavanda), var(--violeta-vivo));
+}
+
+/* ── Navegación del carrusel ──────────────────────────────────────────── */
+
+.header-slide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contador {
+  font-size: var(--texto-meta);
+  font-weight: 700;
+  color: var(--texto-suave);
+  font-variant-numeric: tabular-nums;
+}
+.contador .actual { color: var(--lavanda); }
+
+.deslizar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: var(--texto-meta);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--lavanda);
+}
+.deslizar .flecha { font-style: normal; }
+
+/* Ondas de líneas del manual (decorativo, usar con moderación) */
+.ondas {
+  position: absolute;
+  z-index: 1;
+  opacity: 0.5;
+  pointer-events: none;
+}

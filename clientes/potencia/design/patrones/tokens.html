@@ -1,0 +1,61 @@
+<!-- @dsCard group="Marca" -->
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Tokens de marca — potencIA</title>
+<link rel="stylesheet" href="../fonts.css">
+<link rel="stylesheet" href="../brand.css">
+<style>
+  body { background: var(--navy); }
+  .sheet {
+    width: 1080px;
+    box-sizing: border-box;
+    padding: 64px;
+    color: var(--blanco);
+    font-family: var(--fuente);
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+  }
+  h1 { font-size: 44px; font-weight: 800; margin: 0; }
+  .paleta { display: flex; gap: 18px; }
+  .swatch { flex: 1; border-radius: 20px; overflow: hidden; border: 1px solid rgba(193,152,248,0.25); }
+  .swatch .muestra { height: 110px; }
+  .swatch .datos { padding: 14px 16px; font-size: 20px; background: rgba(59,30,118,0.4); }
+  .swatch .nombre { font-weight: 700; display: block; }
+  .swatch .valor { color: var(--texto-suave); }
+  h2 { font-size: 24px; color: var(--texto-suave); margin: 0 0 16px; text-transform: uppercase; letter-spacing: 0.1em; }
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <h1>potenc<span style="color: var(--lavanda)">IA</span> — Tokens de marca</h1>
+    <div>
+      <h2>Paleta oficial (manual de marca)</h2>
+      <div class="paleta">
+        <div class="swatch"><div class="muestra" style="background: #0d0c2b"></div><div class="datos"><span class="nombre">Navy</span><span class="valor">#0D0C2B</span></div></div>
+        <div class="swatch"><div class="muestra" style="background: #3b1e76"></div><div class="datos"><span class="nombre">Violeta</span><span class="valor">#3B1E76</span></div></div>
+        <div class="swatch"><div class="muestra" style="background: #c198f8"></div><div class="datos"><span class="nombre">Lavanda</span><span class="valor">#C198F8</span></div></div>
+        <div class="swatch"><div class="muestra" style="background: #8d52ff"></div><div class="datos"><span class="nombre">Violeta vivo</span><span class="valor">#8D52FF</span></div></div>
+      </div>
+    </div>
+    <div>
+      <h2>Tipografía — DM Sans</h2>
+      <p class="gancho" style="font-size: 60px; margin-bottom: 20px;">Gancho 800 <span class="acento-italic">con acento itálico</span></p>
+      <p class="titulo" style="font-size: 40px; margin-bottom: 20px;">Título de slide 800, y <span class="highlight">highlight lavanda.</span></p>
+      <p class="cuerpo" style="font-size: 28px;">Cuerpo 400 en texto suave, con <strong>negritas en blanco</strong> para lo importante.</p>
+    </div>
+    <div>
+      <h2>Componentes</h2>
+      <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+        <span class="pill llena" style="font-size: 22px; padding: 12px 28px;">Pill CTA</span>
+        <span class="tag activo">tag activo</span>
+        <span class="tag">tag</span>
+        <span class="kicker"><span class="num">01 / 06</span> — kicker</span>
+        <span class="deslizar">deslizá <span class="flecha">→</span></span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

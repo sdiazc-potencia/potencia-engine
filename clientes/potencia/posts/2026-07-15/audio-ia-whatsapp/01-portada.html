@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Slide 1 — Portada</title>
+<link rel="stylesheet" href="../../../design/fonts.css">
+<link rel="stylesheet" href="../../../design/brand.css">
+<style>
+  .nota-voz {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background: rgba(141, 82, 255, 0.28);
+    border: 1.5px solid rgba(193, 152, 248, 0.4);
+    border-radius: 26px 26px 26px 8px;
+    padding: 26px 34px;
+    width: 620px;
+  }
+  .play {
+    flex: none;
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    background: var(--lavanda);
+    color: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 30px;
+  }
+  .onda { display: flex; align-items: center; gap: 6px; flex: 1; height: 60px; }
+  .onda span { width: 7px; border-radius: 4px; background: var(--lavanda); display: block; }
+  .duracion { font-size: 26px; color: var(--texto-suave); }
+  .meta-audio {
+    display: flex; justify-content: flex-end; gap: 10px;
+    font-size: 22px; color: var(--texto-suave);
+    width: 620px; margin-top: 12px;
+  }
+  .meta-audio .check { color: var(--lavanda); }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <div class="glow calido"></div>
+
+    <div class="header-slide">
+      <div class="wordmark">potenc<span class="ia">IA</span></div>
+      <div class="tag">nadie lo distingue</div>
+    </div>
+
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 54px;">
+      <h1 class="gancho">Este audio<br>lo mandó <span class="acento-italic">una IA.</span><br>Tu cliente<br><span class="highlight">nunca se entera.</span></h1>
+
+      <div>
+        <div class="nota-voz">
+          <div class="play">▶</div>
+          <div class="onda">
+            <span style="height:18px"></span><span style="height:34px"></span><span style="height:52px"></span><span style="height:28px"></span><span style="height:44px"></span><span style="height:58px"></span><span style="height:22px"></span><span style="height:38px"></span><span style="height:50px"></span><span style="height:30px"></span><span style="height:16px"></span><span style="height:42px"></span><span style="height:54px"></span><span style="height:26px"></span><span style="height:36px"></span><span style="height:20px"></span>
+          </div>
+          <div class="duracion">0:23</div>
+        </div>
+        <div class="meta-audio"><span>11:42</span><span class="check">✓✓</span></div>
+      </div>
+    </div>
+
+    <div class="header-slide">
+      <span style="font-size: 26px; color: var(--texto-suave);">@potenc.ia__</span>
+      <span class="deslizar">escuchá la diferencia <span class="flecha">→</span></span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Sticker — Potenciado con IA</title>
+<link rel="stylesheet" href="../fonts.css">
+<style>
+  html, body { margin: 0; padding: 0; background: transparent; }
+  .lienzo {
+    width: 1024px; height: 1024px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "DM Sans", sans-serif;
+  }
+  .sticker {
+    display: flex; flex-direction: column; align-items: center;
+    transform: rotate(-6deg);
+    filter:
+      drop-shadow(7px 0 0 #fff) drop-shadow(-7px 0 0 #fff)
+      drop-shadow(0 7px 0 #fff) drop-shadow(0 -7px 0 #fff)
+      drop-shadow(5px 5px 0 #fff) drop-shadow(-5px 5px 0 #fff)
+      drop-shadow(5px -5px 0 #fff) drop-shadow(-5px -5px 0 #fff)
+      drop-shadow(0 16px 22px rgba(13, 12, 43, 0.3));
+  }
+  svg { shape-rendering: crispEdges; }
+  .pill {
+    display: flex; align-items: center; gap: 30px;
+    background: linear-gradient(120deg, #7c3aed, #8d52ff 55%, #c198f8);
+    border-radius: 999px;
+    padding: 44px 76px;
+  }
+  .rayo { width: 84px; height: 112px; }
+  .pill span {
+    font-size: 78px; font-weight: 800; font-style: italic;
+    color: #f2effa; letter-spacing: -0.02em;
+    padding-right: 10px;
+  }
+</style>
+</head>
+<body>
+  <div class="lienzo">
+    <div class="sticker">
+      <div class="pill">
+        <svg class="rayo" viewBox="0 0 6 8">
+          <rect x="2" y="0" width="3" height="1" fill="#fbbf24"/>
+          <rect x="1.5" y="1" width="3" height="1" fill="#fbbf24"/>
+          <rect x="1" y="2" width="3" height="1" fill="#fbbf24"/>
+          <rect x="0.5" y="3" width="5" height="1" fill="#fde68a"/>
+          <rect x="2" y="4" width="3" height="1" fill="#fbbf24"/>
+          <rect x="2.5" y="5" width="2" height="1" fill="#fbbf24"/>
+          <rect x="3" y="6" width="1.5" height="1" fill="#f59e0b"/>
+          <rect x="3.5" y="7" width="1" height="1" fill="#f59e0b"/>
+        </svg>
+        <span>potenciado con IA</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

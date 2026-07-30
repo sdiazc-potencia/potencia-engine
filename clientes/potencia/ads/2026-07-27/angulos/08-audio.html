@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Ad 8 — El audio</title>
+<link rel="stylesheet" href="../../../design/fonts.css">
+<link rel="stylesheet" href="../../../design/brand.css">
+<style>
+  .nota-voz {
+    display: flex; align-items: center; gap: 24px;
+    background: rgba(141, 82, 255, 0.3);
+    border: 2px solid rgba(193, 152, 248, 0.5);
+    border-radius: 28px 28px 28px 8px;
+    padding: 30px 38px;
+    width: 700px;
+  }
+  .play {
+    flex: none; width: 84px; height: 84px; border-radius: 50%;
+    background: var(--lavanda); color: var(--navy);
+    display: flex; align-items: center; justify-content: center; font-size: 34px;
+  }
+  .onda { display: flex; align-items: center; gap: 7px; flex: 1; height: 70px; }
+  .onda span { width: 8px; border-radius: 4px; background: var(--lavanda); display: block; }
+  .duracion { font-size: 30px; color: var(--texto-suave); }
+  .respuesta {
+    align-self: flex-end;
+    background: rgba(13, 12, 43, 0.85);
+    border: 1px solid rgba(182, 174, 212, 0.3);
+    border-radius: 24px 24px 8px 24px;
+    padding: 22px 32px;
+    font-size: 30px;
+    max-width: 620px;
+  }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <div class="glow calido"></div>
+
+    <div class="header-slide">
+      <div class="wordmark">potenc<span class="ia">IA</span></div>
+      <div class="tag activo">desafío</div>
+    </div>
+
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 42px;">
+      <h1 class="gancho" style="font-size: 88px;">Este audio<br>lo mandó <span class="acento-italic">una IA.</span><br><span class="highlight">Nadie se dio cuenta.</span></h1>
+
+      <div style="display: flex; flex-direction: column; gap: 18px;">
+        <div class="nota-voz">
+          <div class="play">▶</div>
+          <div class="onda">
+            <span style="height:20px"></span><span style="height:38px"></span><span style="height:58px"></span><span style="height:30px"></span><span style="height:48px"></span><span style="height:64px"></span><span style="height:24px"></span><span style="height:42px"></span><span style="height:56px"></span><span style="height:34px"></span><span style="height:18px"></span><span style="height:46px"></span><span style="height:60px"></span><span style="height:28px"></span><span style="height:40px"></span>
+          </div>
+          <div class="duracion">0:23</div>
+        </div>
+        <div class="respuesta">"dale, pasame el precio final y arrancamos 👌" <span style="color: var(--texto-suave); font-size: 25px;">— 4 min después</span></div>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center;">
+      <div class="pill llena" style="font-size: 34px;">Escuchalo vos: escribí "AUDIO" →</div>
+    </div>
+  </div>
+</body>
+</html>

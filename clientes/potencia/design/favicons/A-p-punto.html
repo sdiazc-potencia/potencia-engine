@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Favicon A — p.</title>
+<link rel="stylesheet" href="../fonts.css">
+<style>
+  html, body { margin: 0; padding: 0; }
+  .icono {
+    width: 512px; height: 512px;
+    background: #0d0c2b;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "DM Sans", sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+  .icono::before {
+    content: "";
+    position: absolute; inset: -30%;
+    background: radial-gradient(ellipse 340px 340px at 80% 15%, rgba(141, 82, 255, 0.45), transparent 62%);
+  }
+  .letra {
+    position: relative;
+    font-size: 400px; font-weight: 800;
+    letter-spacing: -0.04em;
+    color: #f2effa;
+    line-height: 0.8;
+    margin-top: -60px;
+  }
+  .punto { color: #8d52ff; }
+</style>
+</head>
+<body>
+  <div class="icono">
+    <div class="letra">p<span class="punto">.</span></div>
+  </div>
+</body>
+</html>

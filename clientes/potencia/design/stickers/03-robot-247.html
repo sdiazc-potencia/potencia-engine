@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Sticker — Robot online 24/7</title>
+<link rel="stylesheet" href="../fonts.css">
+<style>
+  html, body { margin: 0; padding: 0; background: transparent; }
+  .lienzo {
+    width: 1024px; height: 1024px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "DM Sans", sans-serif;
+  }
+  .sticker {
+    display: flex; flex-direction: column; align-items: center; gap: 36px;
+    filter:
+      drop-shadow(7px 0 0 #fff) drop-shadow(-7px 0 0 #fff)
+      drop-shadow(0 7px 0 #fff) drop-shadow(0 -7px 0 #fff)
+      drop-shadow(5px 5px 0 #fff) drop-shadow(-5px 5px 0 #fff)
+      drop-shadow(5px -5px 0 #fff) drop-shadow(-5px -5px 0 #fff)
+      drop-shadow(0 16px 22px rgba(13, 12, 43, 0.3));
+  }
+  svg { shape-rendering: crispEdges; }
+  .robot { width: 440px; height: 528px; }
+  .badge {
+    display: flex; align-items: center; gap: 22px;
+    background: #0d0c2b;
+    border-radius: 999px;
+    padding: 26px 56px;
+  }
+  .punto {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 18px #4ade80;
+  }
+  .badge span { font-size: 56px; font-weight: 800; color: #f2effa; }
+  .badge .siete { color: #c198f8; }
+</style>
+</head>
+<body>
+  <div class="lienzo">
+    <div class="sticker">
+      <svg class="robot" viewBox="0 0 10 12">
+        <rect x="4" y="0" width="1" height="1" fill="#cbd5e1"/>
+        <rect x="4" y="1" width="1" height="1" fill="#64748b"/>
+        <rect x="3" y="2" width="4" height="3" fill="#94a3b8"/>
+        <rect x="3.5" y="3" width="1" height="1" fill="#1e1b3a"/>
+        <rect x="5.5" y="3" width="1" height="1" fill="#1e1b3a"/>
+        <rect x="2" y="5" width="6" height="4" fill="#64748b"/>
+        <rect x="1" y="5" width="1" height="3" fill="#94a3b8"/>
+        <rect x="8" y="4.5" width="1" height="1" fill="#cbd5e1"/>
+        <rect x="8.7" y="4" width="1" height="1" fill="#cbd5e1"/>
+        <rect x="8.7" y="5.4" width="1" height="1" fill="#cbd5e1"/>
+        <rect x="3" y="9" width="1.5" height="3" fill="#334155"/>
+        <rect x="5.5" y="9" width="1.5" height="3" fill="#334155"/>
+      </svg>
+      <div class="badge">
+        <div class="punto"></div>
+        <span>online <span class="siete">24/7</span></span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

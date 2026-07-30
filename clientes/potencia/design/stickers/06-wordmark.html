@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Sticker — Wordmark con robot</title>
+<link rel="stylesheet" href="../fonts.css">
+<style>
+  html, body { margin: 0; padding: 0; background: transparent; }
+  .lienzo {
+    width: 1024px; height: 1024px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "DM Sans", sans-serif;
+  }
+  .sticker {
+    position: relative;
+    filter:
+      drop-shadow(7px 0 0 #fff) drop-shadow(-7px 0 0 #fff)
+      drop-shadow(0 7px 0 #fff) drop-shadow(0 -7px 0 #fff)
+      drop-shadow(5px 5px 0 #fff) drop-shadow(-5px 5px 0 #fff)
+      drop-shadow(5px -5px 0 #fff) drop-shadow(-5px -5px 0 #fff)
+      drop-shadow(0 16px 22px rgba(13, 12, 43, 0.3));
+  }
+  svg { shape-rendering: crispEdges; }
+  .wordmark {
+    font-size: 150px; font-weight: 800;
+    letter-spacing: -0.03em; line-height: 1;
+    color: #0d0c2b;
+  }
+  .wordmark .ia { color: #8d52ff; }
+  .robot {
+    position: absolute;
+    width: 130px; height: 156px;
+    top: -148px; right: 8px;
+  }
+  .tagline {
+    text-align: center;
+    font-size: 40px; font-weight: 700; font-style: italic;
+    color: #7c3aed;
+    margin-top: 18px;
+  }
+</style>
+</head>
+<body>
+  <div class="lienzo">
+    <div class="sticker">
+      <svg class="robot" viewBox="0 -1 10 13">
+        <rect x="4.3" y="-0.5" width="0.5" height="0.5" fill="#fbbf24"/>
+        <rect x="3.8" y="0" width="0.5" height="0.5" fill="#fbbf24"/>
+        <rect x="4.8" y="0" width="0.5" height="0.5" fill="#fbbf24"/>
+        <rect x="4.3" y="0.5" width="0.5" height="0.5" fill="#fbbf24"/>
+        <rect x="3" y="2" width="4" height="3" fill="#8b5cf6"/>
+        <rect x="3.5" y="3" width="1" height="1" fill="#1e1b3a"/>
+        <rect x="5.5" y="3" width="1" height="1" fill="#1e1b3a"/>
+        <rect x="2" y="5" width="6" height="4" fill="#7c3aed"/>
+        <rect x="1" y="4" width="1" height="3" fill="#8b5cf6"/>
+        <rect x="8" y="5" width="1" height="3" fill="#8b5cf6"/>
+        <rect x="3" y="9" width="1.5" height="3" fill="#5b21b6"/>
+        <rect x="5.5" y="9" width="1.5" height="3" fill="#5b21b6"/>
+      </svg>
+      <div class="wordmark">potenc<span class="ia">IA</span></div>
+      <div class="tagline">tu negocio, en piloto automático</div>
+    </div>
+  </div>
+</body>
+</html>

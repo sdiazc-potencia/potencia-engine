@@ -1,0 +1,10 @@
+{
+  "name": "potencia-engine",
+  "version": "2.0.0",
+  "description": "Motor de contenido de Instagram multi-cliente de potencIA — design systems por cliente + skills de Claude Code",
+  "type": "module",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.20.0",
+    "puppeteer-core": "^23.11.1"
+  }
+}

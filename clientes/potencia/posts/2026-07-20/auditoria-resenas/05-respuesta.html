@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Slide 5 — Respuesta personalizada</title>
+<link rel="stylesheet" href="../../../design/fonts.css">
+<link rel="stylesheet" href="../../../design/brand.css">
+<style>
+  .resena {
+    background: rgba(13, 12, 43, 0.75);
+    border: 1.5px solid rgba(182, 174, 212, 0.3);
+    border-radius: var(--radio-chico);
+    padding: 30px 36px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .resena .quien { display: flex; align-items: center; gap: 16px; }
+  .resena .avatar {
+    width: 54px; height: 54px; border-radius: 50%;
+    background: rgba(182, 174, 212, 0.35);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; font-weight: 800;
+  }
+  .resena .nombre { font-size: 26px; font-weight: 700; }
+  .resena .meta { font-size: 22px; color: var(--texto-suave); }
+  .resena .estrellas { color: var(--lavanda); font-size: 24px; letter-spacing: 3px; }
+  .resena .texto { font-size: 27px; line-height: 1.4; color: var(--texto-suave); margin: 0; }
+
+  .respuesta {
+    background: linear-gradient(150deg, rgba(141, 82, 255, 0.3), rgba(59, 30, 118, 0.45));
+    border: 1.5px solid var(--violeta-vivo);
+    border-radius: var(--radio-chico);
+    padding: 30px 36px;
+    margin-left: 70px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .respuesta .etiqueta {
+    font-size: 21px; font-weight: 800;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--lavanda);
+  }
+  .respuesta .texto { font-size: 27px; line-height: 1.42; margin: 0; color: var(--blanco); }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <div class="glow"></div>
+
+    <div class="kicker" style="margin-bottom: 30px;">
+      <span class="num">05 / 07</span>
+      <span>— la respuesta</span>
+    </div>
+
+    <h2 class="titulo" style="margin-bottom: 14px;">Una reseña mala<br>bien respondida <span class="highlight">suma.</span></h2>
+    <p class="cuerpo" style="margin-bottom: 36px;">9 de cada 10 personas miran cómo respondés antes de decidir. Nuestro agente responde por vos:</p>
+
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 24px;">
+      <div class="resena">
+        <div class="quien">
+          <div class="avatar">S</div>
+          <div>
+            <div class="nombre">Sofía M.</div>
+            <div class="meta">hace 2 semanas</div>
+          </div>
+        </div>
+        <div class="estrellas">★★<span style="opacity:0.3">★★★</span></div>
+        <p class="texto">"La comida rica, pero esperamos 40 minutos un sábado y nadie nos avisó nada."</p>
+      </div>
+
+      <div class="respuesta">
+        <div class="etiqueta">↳ Respuesta de nuestro agente — con tu tono y tu contexto</div>
+        <p class="texto">"Sofía, tenés razón y te pedimos disculpas: ese sábado nos superó la demanda. Desde este mes sumamos personal y avisamos la demora real al sentarte. Nos encantaría que vuelvas a comprobarlo — el postre va por nuestra cuenta."</p>
+      </div>
+    </div>
+
+    <div class="header-slide" style="margin-top: 28px;">
+      <span class="wordmark" style="font-size: 30px;">potenc<span class="ia">IA</span></span>
+      <span class="deslizar">el plan completo <span class="flecha">→</span></span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Slide 3 — La decisión en el mapa</title>
+<link rel="stylesheet" href="../../../design/fonts.css">
+<link rel="stylesheet" href="../../../design/brand.css">
+<style>
+  .ficha {
+    background: rgba(59, 30, 118, 0.35);
+    border: 1.5px solid rgba(193, 152, 248, 0.25);
+    border-radius: var(--radio-chico);
+    padding: 34px 38px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .ficha .nombre { font-size: 34px; font-weight: 800; }
+  .ficha .rating { display: flex; align-items: center; gap: 14px; font-size: 28px; }
+  .ficha .rating .estrellas { color: var(--lavanda); letter-spacing: 3px; }
+  .ficha .rating .num { font-weight: 800; }
+  .ficha .detalle { font-size: 25px; color: var(--texto-suave); }
+  .ficha.gana {
+    background: linear-gradient(150deg, rgba(141, 82, 255, 0.35), rgba(59, 30, 118, 0.5));
+    border-color: var(--violeta-vivo);
+    position: relative;
+  }
+  .ficha.gana .badge {
+    position: absolute;
+    top: -20px; right: 30px;
+    background: var(--lavanda);
+    color: var(--navy);
+    font-size: 22px;
+    font-weight: 800;
+    border-radius: 999px;
+    padding: 8px 22px;
+  }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <div class="glow"></div>
+
+    <div class="kicker" style="margin-bottom: 30px;">
+      <span class="num">03 / 07</span>
+      <span>— la decisión</span>
+    </div>
+
+    <h2 class="titulo" style="margin-bottom: 14px;">Sábado, 21:30.<br>Alguien busca <span class="acento-italic">"parrilla cerca".</span></h2>
+    <p class="cuerpo" style="margin-bottom: 44px;">Google le muestra dos opciones a la misma distancia:</p>
+
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 34px;">
+      <div class="ficha">
+        <div class="nombre">Parrilla El Fogón</div>
+        <div class="rating"><span class="estrellas">★★★★<span style="opacity:0.35">★</span></span><span class="num">4,5</span><span class="detalle">(812 reseñas)</span></div>
+        <div class="detalle">"Rica comida pero tardaron mucho…" — hace 3 días, sin responder</div>
+      </div>
+
+      <div class="ficha gana">
+        <div class="badge">ACÁ VA</div>
+        <div class="nombre">Parrilla Don Justo</div>
+        <div class="rating"><span class="estrellas">★★★★★</span><span class="num">4,9</span><span class="detalle">(790 reseñas)</span></div>
+        <div class="detalle">Responde todas las reseñas — las buenas y las malas.</div>
+      </div>
+
+      <p class="cuerpo" style="font-size: 28px;">Cuatro décimas de estrella. <strong>Esa es toda la diferencia entre lleno y vacío.</strong></p>
+    </div>
+
+    <div class="header-slide" style="margin-top: 30px;">
+      <span class="wordmark" style="font-size: 30px;">potenc<span class="ia">IA</span></span>
+      <span class="deslizar">qué hacemos nosotros <span class="flecha">→</span></span>
+    </div>
+  </div>
+</body>
+</html>

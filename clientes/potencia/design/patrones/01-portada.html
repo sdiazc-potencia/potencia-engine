@@ -1,0 +1,38 @@
+<!-- @dsCard group="Slides de carrusel" -->
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Patrón: Portada</title>
+<link rel="stylesheet" href="../fonts.css">
+<link rel="stylesheet" href="../brand.css">
+</head>
+<body>
+  <div class="slide">
+    <div class="glow calido"></div>
+
+    <div class="header-slide">
+      <div class="wordmark">potenc<span class="ia">IA</span></div>
+      <div class="tag">nadie lo mide</div>
+    </div>
+
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 48px;">
+      <h1 class="gancho">Tu equipo pierde<br><span class="acento-italic">14 horas</span> por semana<br>en tareas que una IA<br>hace <span class="highlight">sola.</span></h1>
+
+      <!-- Elemento visual: mini reloj de barras que refuerza el concepto -->
+      <div style="display: flex; gap: 10px; align-items: flex-end; height: 120px;">
+        <div style="width: 52px; height: 40%; border-radius: 10px; background: rgba(182,174,212,0.35);"></div>
+        <div style="width: 52px; height: 55%; border-radius: 10px; background: rgba(182,174,212,0.35);"></div>
+        <div style="width: 52px; height: 70%; border-radius: 10px; background: rgba(182,174,212,0.35);"></div>
+        <div style="width: 52px; height: 100%; border-radius: 10px; background: linear-gradient(180deg, var(--lavanda), var(--violeta-vivo));"></div>
+        <div style="align-self: center; margin-left: 18px; font-size: 26px; color: var(--texto-suave);">las horas se van acá →</div>
+      </div>
+    </div>
+
+    <div class="header-slide">
+      <span style="font-size: 26px; color: var(--texto-suave);">@potenc.ia__</span>
+      <span class="deslizar">esto te va a doler <span class="flecha">→</span></span>
+    </div>
+  </div>
+</body>
+</html>

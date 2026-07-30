@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Slide 1 — Portada</title>
+<link rel="stylesheet" href="../../../design/fonts.css">
+<link rel="stylesheet" href="../../../design/brand.css">
+<style>
+  .sospechosos { display: flex; gap: 18px; }
+  .sospechoso {
+    width: 108px; height: 108px;
+    border-radius: 22px;
+    background: rgba(59, 30, 118, 0.45);
+    border: 1.5px solid rgba(193, 152, 248, 0.35);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 46px; font-weight: 800;
+    color: var(--lavanda);
+    font-style: italic;
+  }
+  .sospechoso.buscado {
+    background: linear-gradient(140deg, var(--violeta-vivo), rgba(141, 82, 255, 0.5));
+    color: var(--blanco);
+    transform: rotate(-4deg);
+  }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <div class="glow calido"></div>
+
+    <div class="header-slide">
+      <div class="wordmark">potenc<span class="ia">IA</span></div>
+      <div class="tag">¿cuál tenés vos?</div>
+    </div>
+
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 52px;">
+      <h1 class="gancho">Uno de estos 5<br>te roba <span class="acento-italic">un día</span><br>por semana. <span class="highlight">Mínimo.</span></h1>
+
+      <div class="sospechosos">
+        <div class="sospechoso">1</div>
+        <div class="sospechoso buscado">2</div>
+        <div class="sospechoso">3</div>
+        <div class="sospechoso">4</div>
+        <div class="sospechoso">5</div>
+      </div>
+
+      <p class="cuerpo" style="font-size: 30px;">Cinco sospechosos. Todos trabajan en tu negocio. <strong>Identificalos.</strong></p>
+    </div>
+
+    <div class="header-slide">
+      <span style="font-size: 26px; color: var(--texto-suave);">@potenc.ia__</span>
+      <span class="deslizar">conocé al primero <span class="flecha">→</span></span>
+    </div>
+  </div>
+</body>
+</html>

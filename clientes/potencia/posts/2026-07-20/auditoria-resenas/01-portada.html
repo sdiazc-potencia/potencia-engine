@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Slide 1 — Portada</title>
+<link rel="stylesheet" href="../../../design/fonts.css">
+<link rel="stylesheet" href="../../../design/brand.css">
+<style>
+  .rating-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(59, 30, 118, 0.45);
+    border: 1.5px solid rgba(193, 152, 248, 0.35);
+    border-radius: 18px;
+    padding: 18px 30px;
+    font-size: 40px;
+    font-weight: 800;
+  }
+  .rating-chip .estrellas { color: var(--lavanda); font-size: 34px; letter-spacing: 4px; }
+  .rating-chip.meta {
+    background: linear-gradient(120deg, rgba(141, 82, 255, 0.45), rgba(59, 30, 118, 0.5));
+    border-color: var(--violeta-vivo);
+  }
+  .flecha-grande { font-size: 48px; color: var(--lavanda); }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <div class="glow calido"></div>
+
+    <div class="header-slide">
+      <div class="wordmark">potenc<span class="ia">IA</span></div>
+      <div class="tag">restaurantes</div>
+    </div>
+
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 52px;">
+      <h1 class="gancho">Mientras leés esto,<br>alguien vio tu ★4,5<br>y <span class="highlight">eligió otro lugar.</span></h1>
+
+      <div style="display: flex; align-items: center; gap: 26px;">
+        <div class="rating-chip">
+          <span class="estrellas">★★★★<span style="opacity:0.35">★</span></span>
+          <span>4,5</span>
+        </div>
+        <div class="flecha-grande">→</div>
+        <div class="rating-chip meta">
+          <span class="estrellas">★★★★★</span>
+          <span>4,9</span>
+        </div>
+      </div>
+
+      <p class="cuerpo" style="font-size: 32px;">Cada décima que te falta son mesas vacías. <strong>Se recupera con un plan — te lo mostramos.</strong></p>
+    </div>
+
+    <div class="header-slide">
+      <span style="font-size: 26px; color: var(--texto-suave);">@potenc.ia__</span>
+      <span class="deslizar">mirá cuánto te cuesta <span class="flecha">→</span></span>
+    </div>
+  </div>
+</body>
+</html>

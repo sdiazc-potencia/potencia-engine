@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Sticker — Isologo gradiente</title>
+<link rel="stylesheet" href="../fonts.css">
+<style>
+  html, body { margin: 0; padding: 0; background: transparent; }
+  .lienzo {
+    width: 1024px; height: 1024px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "DM Sans", sans-serif;
+  }
+  .sticker {
+    position: relative;
+    transform: rotate(-6deg);
+    filter:
+      drop-shadow(7px 0 0 #fff) drop-shadow(-7px 0 0 #fff)
+      drop-shadow(0 7px 0 #fff) drop-shadow(0 -7px 0 #fff)
+      drop-shadow(5px 5px 0 #fff) drop-shadow(-5px 5px 0 #fff)
+      drop-shadow(5px -5px 0 #fff) drop-shadow(-5px -5px 0 #fff)
+      drop-shadow(0 16px 22px rgba(13, 12, 43, 0.3));
+  }
+  svg { shape-rendering: crispEdges; }
+  .wordmark {
+    font-size: 160px; font-weight: 800; font-style: italic;
+    letter-spacing: -0.03em; line-height: 1;
+    background: linear-gradient(100deg, #3b1e76 10%, #8d52ff 55%, #c198f8 95%);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
+    padding-right: 20px;
+  }
+  .destello {
+    position: absolute;
+    width: 90px; height: 90px;
+    top: -58px; right: -10px;
+  }
+</style>
+</head>
+<body>
+  <div class="lienzo">
+    <div class="sticker">
+      <svg class="destello" viewBox="0 0 3 3">
+        <rect x="1" y="0" width="1" height="1" fill="#fbbf24"/>
+        <rect x="0" y="1" width="1" height="1" fill="#fbbf24"/>
+        <rect x="2" y="1" width="1" height="1" fill="#fbbf24"/>
+        <rect x="1" y="2" width="1" height="1" fill="#fbbf24"/>
+      </svg>
+      <div class="wordmark">potencIA</div>
+    </div>
+  </div>
+</body>
+</html>

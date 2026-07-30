@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Slide 2 — El chat</title>
+<link rel="stylesheet" href="../../../design/fonts.css">
+<link rel="stylesheet" href="../../../design/brand.css">
+<style>
+  .chat-panel {
+    background: rgba(59, 30, 118, 0.3);
+    border: 1.5px solid rgba(193, 152, 248, 0.22);
+    border-radius: var(--radio);
+    padding: 32px 36px;
+    display: flex; flex-direction: column; gap: 18px;
+  }
+  .chat-label {
+    font-size: 24px; font-weight: 800;
+    letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .burbuja {
+    max-width: 640px;
+    padding: 20px 28px;
+    border-radius: 22px 22px 22px 6px;
+    background: rgba(13, 12, 43, 0.85);
+    border: 1px solid rgba(182, 174, 212, 0.25);
+    font-size: 26px; line-height: 1.35;
+    color: var(--texto-suave);
+    align-self: flex-start;
+  }
+  .burbuja.saliente {
+    align-self: flex-end;
+    border-radius: 22px 22px 6px 22px;
+    background: rgba(141, 82, 255, 0.3);
+    border-color: rgba(193, 152, 248, 0.4);
+    color: var(--blanco);
+  }
+  .estado { font-size: 21px; color: var(--texto-suave); align-self: flex-start; }
+  .estado.derecha { align-self: flex-end; }
+  .nota-voz-mini {
+    display: flex; align-items: center; gap: 16px;
+    align-self: flex-end;
+    background: rgba(141, 82, 255, 0.3);
+    border: 1px solid rgba(193, 152, 248, 0.4);
+    border-radius: 22px 22px 6px 22px;
+    padding: 18px 24px; width: 460px;
+  }
+  .play-mini {
+    flex: none; width: 48px; height: 48px; border-radius: 50%;
+    background: var(--lavanda); color: var(--navy);
+    display: flex; align-items: center; justify-content: center; font-size: 20px;
+  }
+  .onda-mini { display: flex; align-items: center; gap: 5px; flex: 1; height: 40px; }
+  .onda-mini span { width: 6px; border-radius: 3px; background: var(--lavanda); display: block; }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <div class="glow sutil"></div>
+
+    <div class="kicker" style="margin-bottom: 28px;">
+      <span class="num">02 / 06</span>
+      <span>— la diferencia</span>
+    </div>
+
+    <h2 class="titulo" style="margin-bottom: 36px;">Mismo lead.<br>Dos <span class="acento-italic">respuestas.</span></h2>
+
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 26px;">
+      <div class="chat-panel">
+        <div class="chat-label" style="color: var(--texto-suave);">El bot de siempre</div>
+        <div class="burbuja">Estimado cliente: su consulta N.º 4402 fue recibida. Un asesor se contactará a la brevedad. Horario de atención: L a V de 9 a 18 hs.</div>
+        <div class="estado">Visto 11:42 — sin respuesta hace 3 días</div>
+      </div>
+
+      <div class="chat-panel" style="border-color: var(--violeta-vivo);">
+        <div class="chat-label" style="color: var(--lavanda); text-transform: none; letter-spacing: 0.05em;">El agente de potencIA</div>
+        <div class="nota-voz-mini">
+          <div class="play-mini">▶</div>
+          <div class="onda-mini">
+            <span style="height:14px"></span><span style="height:26px"></span><span style="height:36px"></span><span style="height:20px"></span><span style="height:32px"></span><span style="height:38px"></span><span style="height:16px"></span><span style="height:28px"></span><span style="height:34px"></span><span style="height:18px"></span><span style="height:24px"></span>
+          </div>
+          <span style="font-size: 22px; color: var(--texto-suave);">0:23</span>
+        </div>
+        <div class="estado derecha">"Hola Marce, vi que quedó pendiente lo de la instalación…"</div>
+        <div class="burbuja">dale, pasame el precio final y arrancamos 👌</div>
+        <div class="estado">respondió a los 4 minutos</div>
+      </div>
+    </div>
+
+    <div class="header-slide" style="margin-top: 28px;">
+      <span class="wordmark" style="font-size: 30px;">potenc<span class="ia">IA</span></span>
+      <span class="deslizar">por qué funciona <span class="flecha">→</span></span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+═══════════════════════════════════════
+TEMA: Mayorista: un vendedor digital que trabaja 24/7 sin sueldo ni vacaciones
+TIPO: CARRUSEL | HORARIO: 9am
+═══════════════════════════════════════
+
+── SLIDES ──
+
+Slide 1:
+Slide 1 — GANCHO
+Tu mayorista pierde ventas cada vez que no hay nadie para responder.
+
+Slide 2:
+Slide 2 — VALOR
+El problema real
+Cuando un revendedor pregunta precio o stock a las 11pm, no recibe respuesta. Y al día siguiente ya compró a otro. Así se pierde una venta sin que te enteres.
+
+Slide 3:
+Slide 3 — VALOR
+Qué hace un agente de IA para mayoristas
+Responde consultas de precios, stock y condiciones al instante. Sin intervención humana. Las 24 horas. Incluso en feriados y fines de semana.
+
+Slide 4:
+Slide 4 — VALOR
+No es un bot de respuestas automáticas
+Es un agente que entiende la consulta, accede a tu catálogo actualizado y responde con precisión. Si el pedido cierra, puede tomar el dato y derivar al equipo.
+
+Slide 5:
+Slide 5 — VALOR
+El vendedor humano sigue siendo clave
+Pero para lo que importa: negociar volumen, retener cuentas, cerrar acuerdos grandes. El agente filtra, responde y califica. Tu equipo sólo atiende lo que vale la pena.
+
+Slide 6:
+Slide 6 — CIERRE
+¿Cuántas consultas te entran fuera de horario que hoy no estás convirtiendo?
+
+Slide 7:
+Slide 7 — CTA SUAVE
+En potencIA implementamos agentes de IA para mayoristas en pocas semanas. Se conectan a tu catálogo y empiezan a responder por WhatsApp desde el día uno. Si querés ver cómo aplica a tu negocio, escribinos.
+
+── CAPTION ──
+Tu mayorista pierde ventas cada vez que no hay nadie para responder.
+Y lo peor es que no lo sabés porque el cliente directamente no vuelve.
+
+Un agente de IA atiende a tus revendedores a cualquier hora, responde preguntas de precio, stock y condiciones, y deja al equipo humano libre para cerrar lo que realmente mueve la aguja.
+
+No es ciencia ficción ni un proyecto a largo plazo. Es algo que hoy se puede implementar en tu negocio.
+
+¿Tu mayorista recibe consultas fuera de horario? Contanos en los comentarios cómo lo manejás ahora.
+
+── HASHTAGS ──
+#potencIA #automatizacion #inteligenciaartificial #mayoristas #ventasB2B #agentesIA #WhatsAppBusiness

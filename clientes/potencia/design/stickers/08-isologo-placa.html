@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Sticker — Isologo placa</title>
+<link rel="stylesheet" href="../fonts.css">
+<style>
+  html, body { margin: 0; padding: 0; background: transparent; }
+  .lienzo {
+    width: 1024px; height: 1024px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "DM Sans", sans-serif;
+  }
+  .sticker {
+    transform: rotate(-4deg);
+    filter:
+      drop-shadow(7px 0 0 #fff) drop-shadow(-7px 0 0 #fff)
+      drop-shadow(0 7px 0 #fff) drop-shadow(0 -7px 0 #fff)
+      drop-shadow(5px 5px 0 #fff) drop-shadow(-5px 5px 0 #fff)
+      drop-shadow(5px -5px 0 #fff) drop-shadow(-5px -5px 0 #fff)
+      drop-shadow(0 16px 22px rgba(13, 12, 43, 0.3));
+  }
+  .placa {
+    position: relative;
+    background: #0d0c2b;
+    border-radius: 44px;
+    padding: 92px 100px;
+    overflow: hidden;
+  }
+  .placa::before {
+    content: "";
+    position: absolute; inset: -30%;
+    background:
+      radial-gradient(ellipse 420px 380px at 85% 10%, rgba(141, 82, 255, 0.55), transparent 62%),
+      radial-gradient(ellipse 380px 340px at 8% 95%, rgba(232, 129, 58, 0.3), transparent 58%);
+  }
+  .wordmark {
+    position: relative;
+    font-size: 140px; font-weight: 800;
+    letter-spacing: -0.03em; line-height: 1;
+    color: #f2effa;
+  }
+  .wordmark .ia { color: #c198f8; }
+</style>
+</head>
+<body>
+  <div class="lienzo">
+    <div class="sticker">
+      <div class="placa">
+        <div class="wordmark">potenc<span class="ia">IA</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

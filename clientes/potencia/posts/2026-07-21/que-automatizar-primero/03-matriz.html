@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Slide 3 — La matriz</title>
+<link rel="stylesheet" href="../../../design/fonts.css">
+<link rel="stylesheet" href="../../../design/brand.css">
+<style>
+  .matriz-wrap { flex: 1; display: flex; flex-direction: column; gap: 14px; }
+  .eje-y {
+    font-size: 22px; font-weight: 700; color: var(--texto-suave);
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .matriz {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 18px;
+  }
+  .celda {
+    border-radius: 20px;
+    padding: 26px 28px;
+    background: rgba(59, 30, 118, 0.3);
+    border: 1.5px solid rgba(193, 152, 248, 0.22);
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .celda h3 {
+    margin: 0;
+    font-size: 27px; font-weight: 800;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip {
+    font-size: 22px; font-weight: 500;
+    background: rgba(13, 12, 43, 0.6);
+    border: 1px solid rgba(182, 174, 212, 0.3);
+    border-radius: 999px;
+    padding: 9px 18px;
+    color: var(--texto-suave);
+  }
+  .celda.ya {
+    background: linear-gradient(140deg, rgba(141, 82, 255, 0.42), rgba(59, 30, 118, 0.5));
+    border-color: var(--violeta-vivo);
+  }
+  .celda.ya h3 { color: var(--lavanda); }
+  .celda.ya .chip { color: var(--blanco); border-color: rgba(193, 152, 248, 0.5); }
+  .celda.no { opacity: 0.55; }
+  .eje-x {
+    display: flex; justify-content: space-between;
+    font-size: 22px; font-weight: 700; color: var(--texto-suave);
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <div class="glow"></div>
+
+    <div class="kicker" style="margin-bottom: 26px;">
+      <span class="num">03 / 06</span>
+      <span>— la matriz</span>
+    </div>
+
+    <h2 class="titulo" style="margin-bottom: 30px;">Impacto en la caja<br>vs. <span class="acento-italic">esfuerzo.</span></h2>
+
+    <div class="matriz-wrap">
+      <div class="eje-y">↑ Más impacto en la caja</div>
+      <div class="matriz">
+        <div class="celda ya">
+          <h3>⚡ Hacelo ya</h3>
+          <div class="chips">
+            <span class="chip">Respuestas de WhatsApp</span>
+            <span class="chip">Seguimiento de presupuestos</span>
+            <span class="chip">Recordatorio de turnos</span>
+          </div>
+        </div>
+        <div class="celda">
+          <h3>Planificalo</h3>
+          <div class="chips">
+            <span class="chip">Agente de ventas completo</span>
+            <span class="chip">Todo el circuito conectado</span>
+          </div>
+        </div>
+        <div class="celda">
+          <h3>Si sobra tiempo</h3>
+          <div class="chips">
+            <span class="chip">Reportes automáticos</span>
+            <span class="chip">Carga de comprobantes</span>
+          </div>
+        </div>
+        <div class="celda no">
+          <h3>Ni lo mires</h3>
+          <div class="chips">
+            <span class="chip">"El robot que hace todo"</span>
+            <span class="chip">Procesos que cambian cada mes</span>
+          </div>
+        </div>
+      </div>
+      <div class="eje-x"><span></span><span>Más esfuerzo →</span></div>
+    </div>
+
+    <div class="header-slide" style="margin-top: 26px;">
+      <span class="wordmark" style="font-size: 30px;">potenc<span class="ia">IA</span></span>
+      <span class="deslizar">zoom al cuadrante ganador <span class="flecha">→</span></span>
+    </div>
+  </div>
+</body>
+</html>

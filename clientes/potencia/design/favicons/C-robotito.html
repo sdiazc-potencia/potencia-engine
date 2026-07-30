@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Favicon C — Robotito</title>
+<style>
+  html, body { margin: 0; padding: 0; }
+  .icono {
+    width: 512px; height: 512px;
+    background: #0d0c2b;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .icono::before {
+    content: "";
+    position: absolute; inset: -30%;
+    background: radial-gradient(ellipse 360px 360px at 50% 100%, rgba(141, 82, 255, 0.4), transparent 65%);
+  }
+  svg { shape-rendering: crispEdges; position: relative; width: 400px; height: 400px; }
+</style>
+</head>
+<body>
+  <div class="icono">
+    <!-- cabeza del robotito de la web, con antena -->
+    <svg viewBox="0 0 6 6">
+      <rect x="2.5" y="0" width="1" height="0.8" fill="#c4b5fd"/>
+      <rect x="2.5" y="0.8" width="1" height="0.8" fill="#7c3aed"/>
+      <rect x="1" y="1.6" width="4" height="3.2" fill="#a78bfa"/>
+      <rect x="1.7" y="2.7" width="0.9" height="0.9" fill="#1e1b3a"/>
+      <rect x="3.4" y="2.7" width="0.9" height="0.9" fill="#1e1b3a"/>
+      <rect x="1.6" y="4.8" width="1.2" height="0.7" fill="#7c3aed"/>
+      <rect x="3.2" y="4.8" width="1.2" height="0.7" fill="#7c3aed"/>
+    </svg>
+  </div>
+</body>
+</html>
