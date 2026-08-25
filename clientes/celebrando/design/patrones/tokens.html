@@ -1,0 +1,62 @@
+<!-- @dsCard group="Slides de carrusel" -->
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Patrón: Tokens del sistema</title>
+<link rel="stylesheet" href="../fonts.css">
+<link rel="stylesheet" href="../brand.css">
+</head>
+<body>
+  <div class="slide claro" style="gap: 28px;">
+    <div class="glow limpio"></div>
+
+    <div class="wordmark color" style="width: 340px; height: 66px;"></div>
+
+    <h2 class="titulo" style="font-size: 46px;">Tokens y componentes</h2>
+
+    <div style="display: flex; gap: 16px;">
+      <div style="flex:1; background: var(--azul); color: #fff; border-radius: 18px; padding: 22px;">
+        <b style="font-size: 26px; font-weight: 900;">Azul</b>
+        <div style="font-size: 20px; opacity: .9; line-height: 1.6; margin-top: 6px;">#2345BD<br>PANTONE 2728C<br>--azul</div>
+      </div>
+      <div style="flex:1; background: var(--rojo); color: #fff; border-radius: 18px; padding: 22px;">
+        <b style="font-size: 26px; font-weight: 900;">Rojo</b>
+        <div style="font-size: 20px; opacity: .95; line-height: 1.6; margin-top: 6px;">#E53E51<br>PANTONE 710C<br>--rojo</div>
+      </div>
+      <div style="flex:1; background: var(--gris-100); color: var(--gris-900); border: 2px solid #e3e6ef; border-radius: 18px; padding: 22px;">
+        <b style="font-size: 26px; font-weight: 900;">Neutros</b>
+        <div style="font-size: 20px; color: var(--gris-600); line-height: 1.6; margin-top: 6px;">#26282E<br>#5C6270<br>#F4F5F8</div>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 18px; align-items: baseline; flex-wrap: wrap;">
+      <span style="font-weight: 300; font-size: 34px;">Aa 300</span>
+      <span style="font-weight: 500; font-size: 34px;">Aa 500</span>
+      <span style="font-weight: 700; font-size: 34px;">Aa 700</span>
+      <span style="font-weight: 900; font-size: 34px;">Aa 900</span>
+      <span style="font-size: 22px; color: var(--gris-600);">Mulish, sustituta de Museo Sans</span>
+    </div>
+
+    <div class="tag-row">
+      <span class="tag activo">.tag.activo</span>
+      <span class="tag">.tag</span>
+      <span class="pill llena" style="font-size: 22px; padding: 10px 26px;">.pill.llena</span>
+      <span class="pill" style="font-size: 22px; padding: 10px 26px;">.pill</span>
+    </div>
+
+    <div class="card">
+      <div class="icono">1</div>
+      <div class="contenido">
+        <p class="card-titulo">.card</p>
+        <p class="card-texto">Mismos nombres de clase que el resto de las marcas del repo.</p>
+      </div>
+      <div class="num-derecha">01</div>
+    </div>
+
+    <p class="cuerpo" style="font-size: 24px;">Fondos: .slide (azul) &middot; .slide.claro &middot; .slide.rojo &mdash; redefinen los tokens semánticos solos.</p>
+
+    <div class="footer-marca"><div class="wordmark chico"></div></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!-- @dsCard group="Slides de carrusel" -->
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Patrón: Portada</title>
+<link rel="stylesheet" href="../fonts.css">
+<link rel="stylesheet" href="../brand.css">
+</head>
+<body>
+  <div class="slide">
+    <div class="glow"></div>
+
+    <div class="header-slide">
+      <div class="wordmark"></div>
+      <div class="tag activo">barra de eventos</div>
+    </div>
+
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 52px;">
+      <h1 class="gancho">Tus invitados<br>se van a acordar<br>de la barra<br><span class="highlight">antes que del menú.</span></h1>
+
+      <!-- Elemento visual: lo que más recuerdan de un evento -->
+      <div style="display: flex; gap: 12px; align-items: flex-end; height: 130px;">
+        <div style="width: 58px; height: 38%; border-radius: 12px; background: rgba(255,255,255,0.25);"></div>
+        <div style="width: 58px; height: 52%; border-radius: 12px; background: rgba(255,255,255,0.25);"></div>
+        <div style="width: 58px; height: 66%; border-radius: 12px; background: rgba(255,255,255,0.25);"></div>
+        <div style="width: 58px; height: 100%; border-radius: 12px; background: var(--rojo);"></div>
+        <div style="align-self: center; margin-left: 20px; font-size: 26px; color: var(--texto-suave);">la barra se lleva el recuerdo &rarr;</div>
+      </div>
+    </div>
+
+    <div class="header-slide">
+      <span style="font-size: 26px; color: var(--texto-suave);">@celebrando</span>
+      <span class="deslizar">te lo mostramos <span class="flecha">&raquo;</span></span>
+    </div>
+  </div>
+</body>
+</html>

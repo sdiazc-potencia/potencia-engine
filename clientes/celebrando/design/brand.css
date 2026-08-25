@@ -1,0 +1,478 @@
+/*
+ * Celebrando — Design system para carruseles de Instagram
+ * Fuente: Manual de Identidad Visual oficial (PDF, 55 págs.)
+ *
+ * Colores oficiales:
+ *   #2345BD  azul   PANTONE 2728C  (principal, fondo dominante)
+ *   #E53E51  rojo   PANTONE 710C   (acento: chips, isotipo, CTAs)
+ *   #FFFFFF  blanco (fondos claros y negativos)
+ *
+ * Tipografía: Museo Sans (oficial, no libre) → sustituida por Mulish
+ * en design/fonts.css. Titulares SIEMPRE en 900.
+ *
+ * Estética: flat. Sin degradados de marca, sin sombras duras, sin grano.
+ * El recurso gráfico es la estrella fugaz (isotipo): como trama repetida
+ * o como macro gigante recortado.
+ *
+ * API compartida con el resto de las marcas del repo: los nombres de
+ * clases y tokens son los mismos que en clientes/potencia/design/brand.css.
+ * Lo que cambia es la estética, no la API.
+ *
+ * Formato slide: 1080 × 1350 px (4:5 feed Instagram)
+ */
+
+:root {
+  /* Marca incrustada como data-URI: funciona a cualquier profundidad de carpeta */
+  --logo-blanco: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%22360.8 372.9 1197.5 228.2%22%3E%3Cpath fill=%22%23ffffff%22 d=%22M497.34 477.17C529.54 477.17 544.48 495.10 544.48 495.10L527.70 521.78C527.70 521.78 516.20 510.28 499.87 510.28C481.01 510.28 471.58 524.54 471.58 538.57C471.58 552.60 481.24 568.00 501.25 568.00C517.81 568.00 533.67 553.75 533.67 553.75L548.16 581.57C548.16 581.57 530.46 601.12 497.34 601.12C455.03 601.12 431.34 571.68 431.34 539.03C431.34 507.29 454.80 477.17 497.34 477.17%22/%3E%3Cpath fill=%22%23ffffff%22 d=%22M620.83 524.08C620.83 515.11 614.62 507.06 605.19 507.06C593.70 507.06 588.18 515.34 586.11 524.08L620.83 524.08M606.11 477.17C641.07 477.17 660.84 501.54 660.84 534.43C660.84 538.34 659.92 546.85 659.92 546.85L585.19 546.85C588.18 561.34 600.13 568.00 612.78 568.00C629.80 568.00 645.44 556.05 645.44 556.05L660.15 583.87C660.15 583.87 641.07 601.12 609.56 601.12C567.25 601.12 544.48 570.53 544.48 539.03C544.48 504.30 567.94 477.17 606.11 477.17%22/%3E%3Cpath fill=%22%23ffffff%22 d=%22M668.05 433.93H707.84V598.36H668.05Z%22/%3E%3Cpath fill=%22%23ffffff%22 d=%22M791.98 524.08C791.98 515.11 785.77 507.06 776.34 507.06C764.85 507.06 759.33 515.34 757.26 524.08L791.98 524.08M777.26 477.17C812.22 477.17 832.00 501.54 832.00 534.43C832.00 538.34 831.08 546.85 831.08 546.85L756.34 546.85C759.33 561.34 771.29 568.00 783.93 568.00C800.95 568.00 816.59 556.05 816.59 556.05L831.31 583.87C831.31 583.87 812.22 601.12 780.71 601.12C738.40 601.12 715.63 570.53 715.63 539.03C715.63 504.30 739.09 477.17 777.26 477.17%22/%3E%3Cpath fill=%22%23ffffff%22 d=%22M901.67 568.23C914.09 568.23 924.90 558.12 924.90 539.95C924.90 522.24 915.47 510.74 901.67 510.74C889.72 510.74 878.45 519.48 878.45 539.95C878.45 554.21 886.04 568.23 901.67 568.23M839.81 433.93L879.60 433.93L879.60 479.70C879.60 485.68 879.14 489.82 879.14 489.82L879.60 489.82C879.60 489.82 890.64 477.17 911.56 477.17C943.76 477.17 964.91 502.46 964.91 539.26C964.91 576.74 941.23 601.12 909.72 601.12C887.88 601.12 877.30 587.78 877.30 587.78L876.84 587.78C876.84 587.78 877.07 590.77 877.07 594.45L877.07 598.36L839.81 598.36L839.81 433.93%22/%3E%3Cpath fill=%22%23ffffff%22 d=%22M972.50 479.93L1010.68 479.93L1010.68 499.93C1010.68 503.84 1010.22 507.29 1010.22 507.29L1010.68 507.29C1015.73 491.20 1030.68 477.86 1048.39 477.86C1050.69 477.86 1052.99 478.32 1052.99 478.32L1052.99 517.41C1052.99 517.41 1049.77 516.72 1044.94 516.72C1035.51 516.72 1020.10 519.71 1014.36 537.42C1012.98 541.79 1012.29 547.08 1012.29 553.52L1012.29 598.36L972.50 598.36L972.50 479.93%22/%3E%3Cpath fill=%22%23ffffff%22 d=%22M1114.45 549.84C1114.45 559.50 1105.25 570.76 1094.90 570.76C1087.08 570.76 1083.63 566.39 1083.63 560.88C1083.63 550.99 1098.12 547.31 1110.77 547.31L1114.45 547.31L1114.45 549.84M1100.42 477.17C1085.57 477.17 1072.99 481.15 1064.20 485.07L1064.20 519.93L1064.55 520.63C1064.55 520.63 1081.56 509.36 1096.51 509.36C1106.40 509.36 1113.99 512.58 1113.99 522.47L1113.99 524.54L1112.38 524.54C1093.98 524.54 1043.62 528.45 1043.62 562.94C1043.62 586.40 1061.79 601.12 1083.86 601.12C1108.70 601.12 1117.44 583.87 1117.44 583.87L1117.90 583.87C1117.90 583.87 1117.44 587.32 1117.44 591.23L1117.44 598.36L1153.77 598.36L1153.77 525.46C1153.77 495.34 1133.77 477.17 1100.42 477.17%22/%3E%3Cpath fill=%22%23ffffff%22 d=%22M1166.57 479.93L1204.74 479.93L1204.74 490.28C1204.74 494.18 1204.29 497.64 1204.29 497.64L1204.74 497.64C1210.26 488.44 1221.53 477.17 1242.46 477.17C1266.38 477.17 1285.00 488.21 1285.00 521.55L1285.00 598.36L1245.22 598.36L1245.22 528.91C1245.22 517.87 1240.85 513.27 1232.11 513.27C1219.69 513.27 1212.10 520.17 1208.65 530.29C1207.05 534.89 1206.36 540.18 1206.36 545.93L1206.36 598.36L1166.57 598.36L1166.57 479.93%22/%3E%3Cpath fill=%22%23ffffff%22 d=%22M1355.22 568.23C1367.18 568.23 1378.45 559.50 1378.45 539.03C1378.45 524.77 1370.86 510.74 1355.22 510.74C1342.80 510.74 1331.99 520.86 1331.99 539.03C1331.99 556.74 1341.42 568.23 1355.22 568.23M1346.02 477.17C1369.94 477.17 1377.07 486.60 1377.07 486.60L1377.53 486.60C1377.53 486.60 1377.30 484.30 1377.30 481.31L1377.30 433.93L1417.08 433.93L1417.08 598.36L1379.83 598.36L1379.83 590.54C1379.83 586.86 1380.06 583.87 1380.06 583.87L1379.60 583.87C1379.60 583.87 1369.71 601.12 1345.33 601.12C1313.14 601.12 1291.98 575.82 1291.98 539.03C1291.98 501.54 1314.52 477.17 1346.02 477.17%22/%3E%3Cpath fill=%22%23ffffff%22 d=%22M1491.13 568.00C1505.62 568.00 1518.04 557.20 1518.04 539.49C1518.04 521.55 1505.62 510.28 1491.13 510.28C1476.64 510.28 1464.22 521.55 1464.22 539.49C1464.22 557.20 1476.64 568.00 1491.13 568.00M1490.90 477.17C1528.38 477.17 1558.28 502.23 1558.28 539.49C1558.28 576.51 1528.38 601.12 1491.13 601.12C1453.88 601.12 1423.98 576.51 1423.98 539.49C1423.98 502.23 1453.88 477.17 1490.90 477.17%22/%3E%3Cpath fill=%22%23ffffff%22 d=%22M398.19 562.42C373.83 500.77 426.15 456.97 426.21 456.62C426.67 454.16 390.81 484.75 390.81 484.75C390.31 485.23 389.52 484.66 389.83 484.04L408.54 454.82C408.56 454.78 408.54 454.73 408.51 454.70L360.75 421.75L415.94 421.75C415.98 421.75 416.02 421.72 416.03 421.69C416.03 421.69 431.16 372.99 432.96 372.95C434.73 372.92 452.25 421.69 452.25 421.69C452.26 421.73 452.30 421.75 452.34 421.75L505.65 421.75C507.50 421.75 467.69 442.00 440.73 463.13C380.38 510.43 401.45 561.68 399.26 562.27C398.90 562.37 398.54 562.42 398.19 562.42%22/%3E%3C/svg%3E");
+  --logo-color: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%22360.8 372.9 1197.5 228.2%22%3E%3Cpath fill=%22%232345bd%22 d=%22M497.34 477.17C529.54 477.17 544.48 495.10 544.48 495.10L527.70 521.78C527.70 521.78 516.20 510.28 499.87 510.28C481.01 510.28 471.58 524.54 471.58 538.57C471.58 552.60 481.24 568.00 501.25 568.00C517.81 568.00 533.67 553.75 533.67 553.75L548.16 581.57C548.16 581.57 530.46 601.12 497.34 601.12C455.03 601.12 431.34 571.68 431.34 539.03C431.34 507.29 454.80 477.17 497.34 477.17%22/%3E%3Cpath fill=%22%232345bd%22 d=%22M620.83 524.08C620.83 515.11 614.62 507.06 605.19 507.06C593.70 507.06 588.18 515.34 586.11 524.08L620.83 524.08M606.11 477.17C641.07 477.17 660.84 501.54 660.84 534.43C660.84 538.34 659.92 546.85 659.92 546.85L585.19 546.85C588.18 561.34 600.13 568.00 612.78 568.00C629.80 568.00 645.44 556.05 645.44 556.05L660.15 583.87C660.15 583.87 641.07 601.12 609.56 601.12C567.25 601.12 544.48 570.53 544.48 539.03C544.48 504.30 567.94 477.17 606.11 477.17%22/%3E%3Cpath fill=%22%232345bd%22 d=%22M668.05 433.93H707.84V598.36H668.05Z%22/%3E%3Cpath fill=%22%232345bd%22 d=%22M791.98 524.08C791.98 515.11 785.77 507.06 776.34 507.06C764.85 507.06 759.33 515.34 757.26 524.08L791.98 524.08M777.26 477.17C812.22 477.17 832.00 501.54 832.00 534.43C832.00 538.34 831.08 546.85 831.08 546.85L756.34 546.85C759.33 561.34 771.29 568.00 783.93 568.00C800.95 568.00 816.59 556.05 816.59 556.05L831.31 583.87C831.31 583.87 812.22 601.12 780.71 601.12C738.40 601.12 715.63 570.53 715.63 539.03C715.63 504.30 739.09 477.17 777.26 477.17%22/%3E%3Cpath fill=%22%232345bd%22 d=%22M901.67 568.23C914.09 568.23 924.90 558.12 924.90 539.95C924.90 522.24 915.47 510.74 901.67 510.74C889.72 510.74 878.45 519.48 878.45 539.95C878.45 554.21 886.04 568.23 901.67 568.23M839.81 433.93L879.60 433.93L879.60 479.70C879.60 485.68 879.14 489.82 879.14 489.82L879.60 489.82C879.60 489.82 890.64 477.17 911.56 477.17C943.76 477.17 964.91 502.46 964.91 539.26C964.91 576.74 941.23 601.12 909.72 601.12C887.88 601.12 877.30 587.78 877.30 587.78L876.84 587.78C876.84 587.78 877.07 590.77 877.07 594.45L877.07 598.36L839.81 598.36L839.81 433.93%22/%3E%3Cpath fill=%22%232345bd%22 d=%22M972.50 479.93L1010.68 479.93L1010.68 499.93C1010.68 503.84 1010.22 507.29 1010.22 507.29L1010.68 507.29C1015.73 491.20 1030.68 477.86 1048.39 477.86C1050.69 477.86 1052.99 478.32 1052.99 478.32L1052.99 517.41C1052.99 517.41 1049.77 516.72 1044.94 516.72C1035.51 516.72 1020.10 519.71 1014.36 537.42C1012.98 541.79 1012.29 547.08 1012.29 553.52L1012.29 598.36L972.50 598.36L972.50 479.93%22/%3E%3Cpath fill=%22%232345bd%22 d=%22M1114.45 549.84C1114.45 559.50 1105.25 570.76 1094.90 570.76C1087.08 570.76 1083.63 566.39 1083.63 560.88C1083.63 550.99 1098.12 547.31 1110.77 547.31L1114.45 547.31L1114.45 549.84M1100.42 477.17C1085.57 477.17 1072.99 481.15 1064.20 485.07L1064.20 519.93L1064.55 520.63C1064.55 520.63 1081.56 509.36 1096.51 509.36C1106.40 509.36 1113.99 512.58 1113.99 522.47L1113.99 524.54L1112.38 524.54C1093.98 524.54 1043.62 528.45 1043.62 562.94C1043.62 586.40 1061.79 601.12 1083.86 601.12C1108.70 601.12 1117.44 583.87 1117.44 583.87L1117.90 583.87C1117.90 583.87 1117.44 587.32 1117.44 591.23L1117.44 598.36L1153.77 598.36L1153.77 525.46C1153.77 495.34 1133.77 477.17 1100.42 477.17%22/%3E%3Cpath fill=%22%232345bd%22 d=%22M1166.57 479.93L1204.74 479.93L1204.74 490.28C1204.74 494.18 1204.29 497.64 1204.29 497.64L1204.74 497.64C1210.26 488.44 1221.53 477.17 1242.46 477.17C1266.38 477.17 1285.00 488.21 1285.00 521.55L1285.00 598.36L1245.22 598.36L1245.22 528.91C1245.22 517.87 1240.85 513.27 1232.11 513.27C1219.69 513.27 1212.10 520.17 1208.65 530.29C1207.05 534.89 1206.36 540.18 1206.36 545.93L1206.36 598.36L1166.57 598.36L1166.57 479.93%22/%3E%3Cpath fill=%22%232345bd%22 d=%22M1355.22 568.23C1367.18 568.23 1378.45 559.50 1378.45 539.03C1378.45 524.77 1370.86 510.74 1355.22 510.74C1342.80 510.74 1331.99 520.86 1331.99 539.03C1331.99 556.74 1341.42 568.23 1355.22 568.23M1346.02 477.17C1369.94 477.17 1377.07 486.60 1377.07 486.60L1377.53 486.60C1377.53 486.60 1377.30 484.30 1377.30 481.31L1377.30 433.93L1417.08 433.93L1417.08 598.36L1379.83 598.36L1379.83 590.54C1379.83 586.86 1380.06 583.87 1380.06 583.87L1379.60 583.87C1379.60 583.87 1369.71 601.12 1345.33 601.12C1313.14 601.12 1291.98 575.82 1291.98 539.03C1291.98 501.54 1314.52 477.17 1346.02 477.17%22/%3E%3Cpath fill=%22%232345bd%22 d=%22M1491.13 568.00C1505.62 568.00 1518.04 557.20 1518.04 539.49C1518.04 521.55 1505.62 510.28 1491.13 510.28C1476.64 510.28 1464.22 521.55 1464.22 539.49C1464.22 557.20 1476.64 568.00 1491.13 568.00M1490.90 477.17C1528.38 477.17 1558.28 502.23 1558.28 539.49C1558.28 576.51 1528.38 601.12 1491.13 601.12C1453.88 601.12 1423.98 576.51 1423.98 539.49C1423.98 502.23 1453.88 477.17 1490.90 477.17%22/%3E%3Cpath fill=%22%23e53e51%22 d=%22M398.19 562.42C373.83 500.77 426.15 456.97 426.21 456.62C426.67 454.16 390.81 484.75 390.81 484.75C390.31 485.23 389.52 484.66 389.83 484.04L408.54 454.82C408.56 454.78 408.54 454.73 408.51 454.70L360.75 421.75L415.94 421.75C415.98 421.75 416.02 421.72 416.03 421.69C416.03 421.69 431.16 372.99 432.96 372.95C434.73 372.92 452.25 421.69 452.25 421.69C452.26 421.73 452.30 421.75 452.34 421.75L505.65 421.75C507.50 421.75 467.69 442.00 440.73 463.13C380.38 510.43 401.45 561.68 399.26 562.27C398.90 562.37 398.54 562.42 398.19 562.42%22/%3E%3C/svg%3E");
+  --isotipo-blanco: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%22664.5 204.4 549.7 709.9%22%3E%3Cpath fill=%22%23ffffff%22 d=%22M804.77 914.34C713.54 683.40 909.51 519.30 909.75 517.99C911.48 508.80 777.12 623.38 777.12 623.38C775.28 625.20 772.31 623.04 773.47 620.72L843.54 511.25C843.62 511.10 843.57 510.92 843.43 510.83L664.53 387.37L871.29 387.37C871.44 387.37 871.56 387.27 871.60 387.13C871.60 387.13 928.29 204.70 935.03 204.56C941.66 204.43 1007.31 387.15 1007.31 387.15C1007.36 387.28 1007.48 387.37 1007.62 387.37L1207.37 387.37C1214.27 387.37 1065.15 463.24 964.15 542.40C738.08 719.59 816.99 911.59 808.79 913.80C807.45 914.17 806.10 914.34 804.77 914.34%22/%3E%3C/svg%3E");
+  --isotipo-rojo: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%22664.5 204.4 549.7 709.9%22%3E%3Cpath fill=%22%23e53e51%22 d=%22M804.77 914.34C713.54 683.40 909.51 519.30 909.75 517.99C911.48 508.80 777.12 623.38 777.12 623.38C775.28 625.20 772.31 623.04 773.47 620.72L843.54 511.25C843.62 511.10 843.57 510.92 843.43 510.83L664.53 387.37L871.29 387.37C871.44 387.37 871.56 387.27 871.60 387.13C871.60 387.13 928.29 204.70 935.03 204.56C941.66 204.43 1007.31 387.15 1007.31 387.15C1007.36 387.28 1007.48 387.37 1007.62 387.37L1207.37 387.37C1214.27 387.37 1065.15 463.24 964.15 542.40C738.08 719.59 816.99 911.59 808.79 913.80C807.45 914.17 806.10 914.34 804.77 914.34%22/%3E%3C/svg%3E");
+  --mascota-blanco: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2220 -90 520 760%22%3E%3Cpath fill=%22%23ffffff%22 d=%22M148 350 C196 420 218 500 208 640 C142 530 112 440 120 368 Z%22/%3E%3Cpath fill=%22%23ffffff%22 d=%22M248 388 C238 448 244 505 262 560 C222 505 220 440 232 392 Z%22/%3E%3Cpath fill=%22%23ffffff%22 stroke=%22%23ffffff%22 stroke-width=%2226%22 stroke-linejoin=%22round%22 d=%22M223.6 108.3L282.0 192.4L384.2 186.6L322.3 268.2L359.3 363.6L262.7 329.9L183.4 394.6L185.5 292.3L99.5 236.8L197.5 207.3Z%22/%3E%3Ccircle cx=%22203%22 cy=%22242%22 r=%2215%22 fill=%22%232345bd%22/%3E%3Ccircle cx=%22296%22 cy=%22240%22 r=%2215%22 fill=%22%232345bd%22/%3E%3Cpath d=%22M213 288 Q253 320 292 285%22 fill=%22none%22 stroke=%22%232345bd%22 stroke-width=%2214%22 stroke-linecap=%22round%22/%3E%3Cg transform=%22translate(448,88)%22%3E%3Cpath d=%22M-24 -78 L24 -78 L15 -10 Q0 6 -15 -10 Z%22 fill=%22%23ffffff%22/%3E%3Crect x=%22-4.5%22 y=%220%22 width=%229%22 height=%2258%22 rx=%224%22 fill=%22%23ffffff%22/%3E%3Crect x=%22-23%22 y=%2254%22 width=%2246%22 height=%2210%22 rx=%225%22 fill=%22%23ffffff%22/%3E%3C/g%3E%3Cpath d=%22M352 228 C400 208 428 180 442 130%22 fill=%22none%22 stroke=%22%23ffffff%22 stroke-width=%2221%22 stroke-linecap=%22round%22/%3E%3Ccircle cx=%22448%22 cy=%22120%22 r=%2213.5%22 fill=%22%23ffffff%22/%3E%3Ccircle cx=%22472%22 cy=%22-30%22 r=%229%22 fill=%22%23ffffff%22/%3E%3Ccircle cx=%22436%22 cy=%22-48%22 r=%226%22 fill=%22%23ffffff%22/%3E%3Ccircle cx=%22500%22 cy=%22-58%22 r=%225%22 fill=%22%23ffffff%22/%3E%3Cpath fill=%22%23ffffff%22 d=%22M96 100 L104 126 L130 134 L104 142 L96 168 L88 142 L62 134 L88 126 Z%22/%3E%3Cpath d=%22M132 288 C98 300 72 326 60 358%22 fill=%22none%22 stroke=%22%23ffffff%22 stroke-width=%2221%22 stroke-linecap=%22round%22/%3E%3C/svg%3E");
+  --mascota-color: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2220 -90 520 760%22%3E%3Cpath fill=%22%23e53e51%22 d=%22M148 350 C196 420 218 500 208 640 C142 530 112 440 120 368 Z%22/%3E%3Cpath fill=%22%23e53e51%22 d=%22M248 388 C238 448 244 505 262 560 C222 505 220 440 232 392 Z%22/%3E%3Cpath fill=%22%23e53e51%22 stroke=%22%23e53e51%22 stroke-width=%2226%22 stroke-linejoin=%22round%22 d=%22M223.6 108.3L282.0 192.4L384.2 186.6L322.3 268.2L359.3 363.6L262.7 329.9L183.4 394.6L185.5 292.3L99.5 236.8L197.5 207.3Z%22/%3E%3Ccircle cx=%22203%22 cy=%22242%22 r=%2215%22 fill=%22%23ffffff%22/%3E%3Ccircle cx=%22296%22 cy=%22240%22 r=%2215%22 fill=%22%23ffffff%22/%3E%3Cpath d=%22M213 288 Q253 320 292 285%22 fill=%22none%22 stroke=%22%23ffffff%22 stroke-width=%2214%22 stroke-linecap=%22round%22/%3E%3Cg transform=%22translate(448,88)%22%3E%3Cpath d=%22M-24 -78 L24 -78 L15 -10 Q0 6 -15 -10 Z%22 fill=%22%232345bd%22/%3E%3Crect x=%22-4.5%22 y=%220%22 width=%229%22 height=%2258%22 rx=%224%22 fill=%22%232345bd%22/%3E%3Crect x=%22-23%22 y=%2254%22 width=%2246%22 height=%2210%22 rx=%225%22 fill=%22%232345bd%22/%3E%3C/g%3E%3Cpath d=%22M352 228 C400 208 428 180 442 130%22 fill=%22none%22 stroke=%22%23e53e51%22 stroke-width=%2221%22 stroke-linecap=%22round%22/%3E%3Ccircle cx=%22448%22 cy=%22120%22 r=%2213.5%22 fill=%22%23e53e51%22/%3E%3Ccircle cx=%22472%22 cy=%22-30%22 r=%229%22 fill=%22%23e53e51%22/%3E%3Ccircle cx=%22436%22 cy=%22-48%22 r=%226%22 fill=%22%232345bd%22/%3E%3Ccircle cx=%22500%22 cy=%22-58%22 r=%225%22 fill=%22%23e53e51%22/%3E%3Cpath fill=%22%232345bd%22 d=%22M96 100 L104 126 L130 134 L104 142 L96 168 L88 142 L62 134 L88 126 Z%22/%3E%3Cpath d=%22M132 288 C98 300 72 326 60 358%22 fill=%22none%22 stroke=%22%23e53e51%22 stroke-width=%2221%22 stroke-linecap=%22round%22/%3E%3C/svg%3E");
+  --mascota-blanco-rojo: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2220 -90 520 760%22%3E%3Cpath fill=%22%23ffffff%22 d=%22M148 350 C196 420 218 500 208 640 C142 530 112 440 120 368 Z%22/%3E%3Cpath fill=%22%23ffffff%22 d=%22M248 388 C238 448 244 505 262 560 C222 505 220 440 232 392 Z%22/%3E%3Cpath fill=%22%23ffffff%22 stroke=%22%23ffffff%22 stroke-width=%2226%22 stroke-linejoin=%22round%22 d=%22M223.6 108.3L282.0 192.4L384.2 186.6L322.3 268.2L359.3 363.6L262.7 329.9L183.4 394.6L185.5 292.3L99.5 236.8L197.5 207.3Z%22/%3E%3Ccircle cx=%22203%22 cy=%22242%22 r=%2215%22 fill=%22%23e53e51%22/%3E%3Ccircle cx=%22296%22 cy=%22240%22 r=%2215%22 fill=%22%23e53e51%22/%3E%3Cpath d=%22M213 288 Q253 320 292 285%22 fill=%22none%22 stroke=%22%23e53e51%22 stroke-width=%2214%22 stroke-linecap=%22round%22/%3E%3Cg transform=%22translate(448,88)%22%3E%3Cpath d=%22M-24 -78 L24 -78 L15 -10 Q0 6 -15 -10 Z%22 fill=%22%23ffffff%22/%3E%3Crect x=%22-4.5%22 y=%220%22 width=%229%22 height=%2258%22 rx=%224%22 fill=%22%23ffffff%22/%3E%3Crect x=%22-23%22 y=%2254%22 width=%2246%22 height=%2210%22 rx=%225%22 fill=%22%23ffffff%22/%3E%3C/g%3E%3Cpath d=%22M352 228 C400 208 428 180 442 130%22 fill=%22none%22 stroke=%22%23ffffff%22 stroke-width=%2221%22 stroke-linecap=%22round%22/%3E%3Ccircle cx=%22448%22 cy=%22120%22 r=%2213.5%22 fill=%22%23ffffff%22/%3E%3Ccircle cx=%22472%22 cy=%22-30%22 r=%229%22 fill=%22%23ffffff%22/%3E%3Ccircle cx=%22436%22 cy=%22-48%22 r=%226%22 fill=%22%23ffffff%22/%3E%3Ccircle cx=%22500%22 cy=%22-58%22 r=%225%22 fill=%22%23ffffff%22/%3E%3Cpath fill=%22%23ffffff%22 d=%22M96 100 L104 126 L130 134 L104 142 L96 168 L88 142 L62 134 L88 126 Z%22/%3E%3Cpath d=%22M132 288 C98 300 72 326 60 358%22 fill=%22none%22 stroke=%22%23ffffff%22 stroke-width=%2221%22 stroke-linecap=%22round%22/%3E%3C/svg%3E");
+  --trama-blanco: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%22490 60 900 1000%22%3E%3Cpath fill=%22%23ffffff%22 d=%22M804.77 914.34C713.54 683.40 909.51 519.30 909.75 517.99C911.48 508.80 777.12 623.38 777.12 623.38C775.28 625.20 772.31 623.04 773.47 620.72L843.54 511.25C843.62 511.10 843.57 510.92 843.43 510.83L664.53 387.37L871.29 387.37C871.44 387.37 871.56 387.27 871.60 387.13C871.60 387.13 928.29 204.70 935.03 204.56C941.66 204.43 1007.31 387.15 1007.31 387.15C1007.36 387.28 1007.48 387.37 1007.62 387.37L1207.37 387.37C1214.27 387.37 1065.15 463.24 964.15 542.40C738.08 719.59 816.99 911.59 808.79 913.80C807.45 914.17 806.10 914.34 804.77 914.34%22/%3E%3C/svg%3E");
+  --trama-rojo: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%22490 60 900 1000%22%3E%3Cpath fill=%22%23e53e51%22 d=%22M804.77 914.34C713.54 683.40 909.51 519.30 909.75 517.99C911.48 508.80 777.12 623.38 777.12 623.38C775.28 625.20 772.31 623.04 773.47 620.72L843.54 511.25C843.62 511.10 843.57 510.92 843.43 510.83L664.53 387.37L871.29 387.37C871.44 387.37 871.56 387.27 871.60 387.13C871.60 387.13 928.29 204.70 935.03 204.56C941.66 204.43 1007.31 387.15 1007.31 387.15C1007.36 387.28 1007.48 387.37 1007.62 387.37L1207.37 387.37C1214.27 387.37 1065.15 463.24 964.15 542.40C738.08 719.59 816.99 911.59 808.79 913.80C807.45 914.17 806.10 914.34 804.77 914.34%22/%3E%3C/svg%3E");
+
+  /* Colores de marca */
+  --azul: #2345bd;
+  --rojo: #e53e51;
+  --blanco: #ffffff;
+  --gris-900: #26282e;
+  --gris-600: #5c6270;
+  --gris-100: #f4f5f8;
+  --azul-oscuro: #1b3596;   /* solo para bordes/superficies sobre azul */
+
+  /* Alias semánticos (API compartida) */
+  --color-fondo: var(--azul);
+  --color-texto: var(--blanco);
+  --color-acento: var(--blanco);        /* sobre azul, el acento es blanco */
+  --color-acento-fuerte: var(--rojo);
+  --texto-suave: rgba(255, 255, 255, 0.78);
+  --superficie: rgba(255, 255, 255, 0.1);
+  --borde: rgba(255, 255, 255, 0.28);
+
+  /* Tipografía */
+  --fuente: "Mulish", "Museo Sans", "Segoe UI", -apple-system, sans-serif;
+  --texto-gancho: 92px;
+  --texto-titulo: 62px;
+  --texto-subtitulo: 44px;
+  --texto-cuerpo: 36px;
+  --texto-card-titulo: 32px;
+  --texto-card-cuerpo: 26px;
+  --texto-meta: 26px;
+
+  /* Layout */
+  --slide-ancho: 1080px;
+  --slide-alto: 1350px;
+  --pad: 88px;
+  --radio: 28px;
+  --radio-chico: 18px;
+}
+
+/* ── Base ──────────────────────────────────────────────────────────────── */
+
+html, body { margin: 0; padding: 0; }
+
+.slide {
+  width: var(--slide-ancho);
+  height: var(--slide-alto);
+  box-sizing: border-box;
+  padding: var(--pad);
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--fuente);
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.slide > * { position: relative; z-index: 2; }
+
+/* Variantes de fondo. Redefinen los tokens semánticos para que .acento,
+   .card, .pill, etc. sigan viéndose bien sin tocar el HTML. */
+.slide.claro {
+  --color-fondo: var(--blanco);
+  --color-texto: var(--gris-900);
+  --color-acento: var(--rojo);
+  --texto-suave: var(--gris-600);
+  --superficie: var(--gris-100);
+  --borde: #e3e6ef;
+}
+.slide.rojo {
+  --color-fondo: var(--rojo);
+  --color-texto: var(--blanco);
+  --color-acento: var(--blanco);
+  --color-acento-fuerte: var(--blanco);
+}
+
+/* ── Fondos: recursos del lenguaje complementario ──────────────────────── */
+/* Mismo hook que en las otras marcas (.glow), estética de Celebrando:      */
+/* macro del isotipo por defecto, trama de estrellas como variante.         */
+
+.glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+/* Macro: isotipo gigante recortado en la esquina superior derecha */
+.glow::before {
+  content: "";
+  position: absolute;
+  top: -18%;
+  right: -22%;
+  width: 132%;
+  height: 118%;
+  background-image: var(--isotipo-blanco);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top right;
+  opacity: 0.13;
+}
+.slide.claro .glow::before { background-image: var(--isotipo-rojo); opacity: 0.1; }
+
+/* Variante trama: estrellas repetidas (lenguaje complementario del manual) */
+.glow.trama::before {
+  top: 0; right: 0; width: 100%; height: 100%;
+  background-image: var(--trama-blanco);
+  background-repeat: repeat;
+  background-size: 244px 271px;
+  background-position: center;
+  opacity: 0.11;
+}
+.slide.claro .glow.trama::before { background-image: var(--trama-rojo); opacity: 0.12; }
+
+.glow.sutil::before { opacity: 0.07; }
+.glow.limpio::before { display: none; }
+
+/* ── Logo / wordmark ──────────────────────────────────────────────────── */
+/* Es una imagen (no texto): el wordmark de Celebrando es un SVG del manual.
+   Va incrustado como data-URI para que funcione a cualquier profundidad. */
+
+.wordmark {
+  display: block;
+  width: 300px;
+  height: 58px;
+  background-image: var(--logo-blanco);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  flex: none;
+}
+.wordmark.color { background-image: var(--logo-color); }
+.slide.claro .wordmark { background-image: var(--logo-color); }
+.wordmark.chico { width: 220px; height: 42px; }
+.wordmark.grande { width: 480px; height: 92px; }
+
+/* Footer estándar: wordmark centrado abajo */
+.footer-marca {
+  position: absolute;
+  bottom: 56px;
+  left: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Mascota "Estela" — acompaña, nunca reemplaza al logo. Una por pieza. */
+.mascota {
+  display: block;
+  width: 300px;
+  height: 440px;
+  background-image: var(--mascota-blanco);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  flex: none;
+}
+.slide.claro .mascota { background-image: var(--mascota-color); }
+.slide.rojo .mascota { background-image: var(--mascota-blanco-rojo); }
+.mascota.chica { width: 190px; height: 278px; }
+.mascota.grande { width: 420px; height: 616px; }
+
+/* ── Texto ────────────────────────────────────────────────────────────── */
+
+.gancho {
+  font-size: var(--texto-gancho);
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-wrap: balance;
+}
+.titulo {
+  font-size: var(--texto-titulo);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin: 0;
+  text-wrap: balance;
+}
+.slide.claro .titulo, .slide.claro .gancho { color: var(--azul); }
+
+.cuerpo {
+  font-size: var(--texto-cuerpo);
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--texto-suave);
+  margin: 0;
+}
+.cuerpo strong, .cuerpo b { color: var(--color-texto); font-weight: 700; }
+
+.acento { color: var(--color-acento); }
+.acento-italic { color: var(--color-acento); font-style: italic; font-weight: 700; }
+
+/* Highlight: barra de color detrás del texto */
+.highlight {
+  background: var(--rojo);
+  color: var(--blanco);
+  padding: 2px 18px;
+  border-radius: 8px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.slide.rojo .highlight { background: var(--blanco); color: var(--rojo); }
+
+/* Kicker editorial: "01 / 05 — TIPS DE BARRA" */
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: var(--texto-meta);
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+.kicker .num {
+  background: var(--rojo);
+  color: var(--blanco);
+  padding: 6px 16px;
+  border-radius: 999px;
+  letter-spacing: 0.08em;
+}
+.slide.rojo .kicker .num { background: var(--blanco); color: var(--rojo); }
+
+/* ── Pills y tags ─────────────────────────────────────────────────────── */
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--texto-meta);
+  font-weight: 700;
+  color: var(--color-texto);
+  border: 2.5px solid var(--borde);
+  border-radius: 999px;
+  padding: 14px 36px;
+}
+.pill.llena {
+  background: var(--rojo);
+  border-color: var(--rojo);
+  color: var(--blanco);
+}
+.slide.rojo .pill.llena { background: var(--blanco); border-color: var(--blanco); color: var(--rojo); }
+
+.tag-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.tag {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  border: 2px solid var(--borde);
+  border-radius: 999px;
+  padding: 8px 20px;
+}
+.tag.activo {
+  color: var(--blanco);
+  background: var(--rojo);
+  border-color: var(--rojo);
+}
+
+/* ── Cards ────────────────────────────────────────────────────────────── */
+
+.card {
+  background: var(--superficie);
+  border: 2px solid var(--borde);
+  border-radius: var(--radio-chico);
+  padding: 26px 32px;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+.card-lista { display: flex; flex-direction: column; gap: 22px; }
+.card .icono {
+  flex: none;
+  width: 76px; height: 76px;
+  border-radius: 50%;
+  background: var(--rojo);
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  font-weight: 900;
+}
+.card .icono.claro { background: var(--blanco); color: var(--azul); }
+.card .contenido { flex: 1; min-width: 0; }
+.card .card-titulo {
+  font-size: var(--texto-card-titulo);
+  font-weight: 900;
+  margin: 0 0 6px;
+}
+.card .card-sub {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-acento);
+  margin: 0 0 4px;
+  font-style: italic;
+}
+.card .card-texto {
+  font-size: var(--texto-card-cuerpo);
+  line-height: 1.38;
+  color: var(--texto-suave);
+  margin: 0;
+}
+.card .num-derecha {
+  flex: none;
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--color-acento);
+}
+
+/* ── Datos y gráficos ─────────────────────────────────────────────────── */
+
+.stat {
+  font-size: 210px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  color: var(--color-acento);
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+.slide.claro .stat { color: var(--rojo); }
+.stat-label {
+  font-size: var(--texto-subtitulo);
+  font-weight: 900;
+  line-height: 1.15;
+  margin: 12px 0 0;
+}
+
+/* Gráfico de barras horizontales */
+.barras { display: flex; flex-direction: column; gap: 30px; }
+.barra-fila { display: flex; flex-direction: column; gap: 12px; }
+.barra-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 28px;
+  font-weight: 700;
+}
+.barra-head .valor { color: var(--color-acento); font-size: 32px; font-weight: 900; font-variant-numeric: tabular-nums; }
+.barra-track {
+  height: 34px;
+  background: var(--superficie);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.barra-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--rojo);
+}
+.slide.rojo .barra-fill { background: var(--blanco); }
+.barra-fill.apagada { background: var(--borde); }
+
+/* Comparativa antes/después en dos paneles */
+.comparativa { display: flex; gap: 26px; flex: 1; }
+.panel {
+  flex: 1;
+  border-radius: var(--radio);
+  padding: 44px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: var(--superficie);
+  border: 2px solid var(--borde);
+}
+.panel.destacado {
+  background: var(--rojo);
+  border-color: var(--rojo);
+  color: var(--blanco);
+}
+.panel .panel-titulo {
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.panel ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.panel li {
+  font-size: 27px;
+  line-height: 1.35;
+  color: var(--texto-suave);
+  display: flex;
+  gap: 14px;
+}
+.panel li::before { content: "✕"; font-weight: 900; opacity: 0.65; }
+.panel.destacado li { color: var(--blanco); }
+.panel.destacado li::before { content: "★"; opacity: 1; }
+
+/* Flujo / diagrama de pasos conectados */
+.flujo { display: flex; flex-direction: column; align-items: center; gap: 0; }
+.nodo {
+  background: var(--superficie);
+  border: 2px solid var(--borde);
+  border-radius: var(--radio-chico);
+  padding: 24px 40px;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+}
+.nodo.destacado { background: var(--rojo); border-color: var(--rojo); color: var(--blanco); }
+.conector { width: 4px; height: 44px; background: var(--rojo); }
+.slide.rojo .conector { background: var(--blanco); }
+
+/* ── Navegación del carrusel ──────────────────────────────────────────── */
+
+.header-slide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contador {
+  font-size: var(--texto-meta);
+  font-weight: 700;
+  color: var(--texto-suave);
+  font-variant-numeric: tabular-nums;
+}
+.contador .actual { color: var(--color-acento); font-weight: 900; }
+
+.deslizar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: var(--texto-meta);
+  font-weight: 900;
+  color: var(--color-acento);
+}
+.deslizar .flecha { font-style: normal; }
+
+/* Decorativo suelto (equivalente a .ondas en otras marcas) */
+.ondas {
+  position: absolute;
+  z-index: 1;
+  opacity: 0.5;
+  pointer-events: none;
+}

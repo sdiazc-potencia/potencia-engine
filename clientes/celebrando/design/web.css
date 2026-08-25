@@ -1,0 +1,366 @@
+/*
+ * Celebrando — Capa WEB del design system
+ * Para sitios y landings. Los slides de Instagram usan brand.css.
+ *
+ * Por qué son dos archivos: brand.css trabaja en un lienzo fijo de 1080×1350
+ * (tipografías de 92px, sin responsive). Una web necesita fluidez, estados de
+ * hover/foco y componentes que no existen en un slide (nav, formularios).
+ * Los TOKENS son los mismos; los COMPONENTES no.
+ *
+ * ⚠️ Si cambiás un color o la tipografía, actualizá también design/brand.css.
+ *
+ * Nombres de clase elegidos para no chocar con brand.css: acá es .tarjeta y
+ * .chip donde el slide usa .card y .tag/.pill. Se pueden cargar los dos juntos.
+ *
+ * Uso:
+ *   <link rel="stylesheet" href="design/fonts.css">
+ *   <link rel="stylesheet" href="design/web.css">
+ */
+
+:root {
+  /* Colores de marca — mismos valores que brand.css */
+  --azul: #2345bd;
+  --rojo: #e53e51;
+  --blanco: #ffffff;
+  --gris-900: #26282e;
+  --gris-600: #5c6270;
+  --gris-100: #f4f5f8;
+
+  /* Alias semánticos */
+  --color-fondo: var(--blanco);
+  --color-texto: var(--gris-900);
+  --color-texto-suave: var(--gris-600);
+  --color-acento: var(--rojo);
+  --color-borde: #e3e6ef;
+
+  /* Tipografía */
+  --fuente: "Mulish", "Museo Sans", "Segoe UI", -apple-system, sans-serif;
+  --peso-titulo: 900;
+  --peso-sub: 700;
+  --peso-cuerpo: 500;
+
+  --texto-display: clamp(40px, 6.5vw, 76px);
+  --texto-h1: clamp(34px, 5vw, 52px);
+  --texto-h2: clamp(28px, 3.6vw, 38px);
+  --texto-h3: 24px;
+  --texto-cuerpo: 18px;
+  --texto-chico: 14px;
+
+  /* Espaciado (base 4) */
+  --sp-1: 4px;  --sp-2: 8px;   --sp-3: 12px;  --sp-4: 16px;
+  --sp-6: 24px; --sp-8: 32px;  --sp-12: 48px; --sp-16: 64px;
+  --sp-24: 96px; --sp-32: 128px;
+
+  /* Radios y sombra (una sola sombra en todo el sistema) */
+  --radio-s: 10px;
+  --radio-m: 18px;
+  --radio-l: 28px;
+  --pill: 999px;
+  --sombra: 0 8px 28px rgba(35, 69, 189, 0.14);
+
+  --ancho-max: 1160px;
+}
+
+/* ── Base ──────────────────────────────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  font-weight: var(--peso-cuerpo);
+  font-size: var(--texto-cuerpo);
+  line-height: 1.6;
+  color: var(--color-texto);
+  background: var(--color-fondo);
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--azul); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+:focus-visible {
+  outline: 3px solid var(--rojo);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Layout ───────────────────────────────────────────────────────────── */
+
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-max);
+  margin-inline: auto;
+  padding-inline: var(--sp-6);
+}
+
+.seccion { padding-block: var(--sp-24); }
+.seccion.compacta { padding-block: var(--sp-16); }
+.seccion.suave { background: var(--gris-100); }
+.seccion.azul { background: var(--azul); color: var(--blanco); }
+.seccion.roja { background: var(--rojo); color: var(--blanco); }
+
+/* Los enlaces sobre fondo de color van en blanco, pero los botones conservan
+   su propio color: sin el :not(.btn), esta regla gana por especificidad y deja
+   .btn-blanco con texto blanco sobre fondo blanco. */
+:is(.seccion.azul, .seccion.roja, .hero, .pie) a:not(.btn) { color: var(--blanco); }
+
+.grid { display: grid; gap: var(--sp-6); }
+.grid.dos  { grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); }
+.grid.tres { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+.pila { display: flex; flex-direction: column; gap: var(--sp-4); }
+.fila { display: flex; gap: var(--sp-4); flex-wrap: wrap; align-items: center; }
+
+/* Contenido de lectura: ~65 caracteres por línea */
+.prosa { max-width: 62ch; }
+
+/* ── Tipografía ───────────────────────────────────────────────────────── */
+
+.display, .h1, .h2, .h3 {
+  font-weight: var(--peso-titulo);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-wrap: balance;
+  color: var(--azul);
+}
+.display { font-size: var(--texto-display); }
+.h1 { font-size: var(--texto-h1); }
+.h2 { font-size: var(--texto-h2); }
+.h3 { font-size: var(--texto-h3); line-height: 1.25; }
+
+/* Un solo grupo para todo lo que va sobre fondo de color (incluye el hero
+   y el pie, que no son .seccion). */
+:is(.seccion.azul, .seccion.roja, .hero, .pie) :is(.display, .h1, .h2, .h3) {
+  color: var(--blanco);
+}
+
+.bajada {
+  font-size: clamp(18px, 2vw, 22px);
+  color: var(--color-texto-suave);
+  margin: var(--sp-4) 0 0;
+}
+:is(.seccion.azul, .seccion.roja, .hero, .pie) .bajada { color: rgba(255, 255, 255, 0.88); }
+
+.eyebrow {
+  font-size: var(--texto-chico);
+  font-weight: var(--peso-sub);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rojo);
+  margin: 0 0 var(--sp-2);
+}
+:is(.seccion.azul, .seccion.roja, .hero) .eyebrow { color: var(--blanco); opacity: .82; }
+
+.destacado { color: var(--rojo); }
+:is(.seccion.azul, .seccion.roja, .hero) .destacado { color: var(--blanco); }
+
+/* ── Marca ────────────────────────────────────────────────────────────── */
+
+.logo { display: block; width: 200px; }
+.logo img { width: 100%; }
+
+/* Estela: acompaña, nunca reemplaza al logo. Una por página. */
+.estela { display: block; width: 220px; margin-inline: auto; }
+
+/* Fondo decorativo: macro del isotipo recortado */
+.con-macro { position: relative; overflow: hidden; }
+.con-macro > * { position: relative; z-index: 1; }
+.con-macro::before {
+  content: "";
+  position: absolute;
+  top: -22%;
+  right: -12%;
+  width: 640px;
+  height: 780px;
+  background-image: url("marca/isotipo-blanco.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Botones ──────────────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  font-family: var(--fuente);
+  font-weight: var(--peso-sub);
+  font-size: var(--texto-cuerpo);
+  line-height: 1;
+  padding: 16px 34px;
+  border: none;
+  border-radius: var(--pill);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+.btn:hover { text-decoration: none; transform: translateY(-2px); box-shadow: var(--sombra); }
+.btn:active { transform: translateY(0); }
+
+.btn-primario   { background: var(--rojo);  color: var(--blanco); }
+.btn-secundario { background: var(--azul);  color: var(--blanco); }
+.btn-blanco     { background: var(--blanco); color: var(--azul); }
+.btn-fantasma {
+  background: transparent;
+  color: var(--azul);
+  box-shadow: inset 0 0 0 2.5px var(--azul);
+}
+:is(.seccion.azul, .seccion.roja, .hero, .pie) .btn-fantasma {
+  color: var(--blanco);
+  box-shadow: inset 0 0 0 2.5px rgba(255, 255, 255, 0.6);
+}
+
+/* ── Navegación ───────────────────────────────────────────────────────── */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--azul);
+  color: var(--blanco);
+}
+.nav .contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-6);
+  padding-block: var(--sp-4);
+}
+.nav-links { display: flex; gap: var(--sp-6); align-items: center; flex-wrap: wrap; }
+.nav-links a {
+  color: var(--blanco);
+  font-weight: var(--peso-sub);
+  font-size: 16px;
+  text-decoration: none;
+  opacity: .88;
+}
+.nav-links a:hover { opacity: 1; text-decoration: none; }
+
+/* ── Hero ─────────────────────────────────────────────────────────────── */
+
+.hero {
+  background: var(--azul);
+  color: var(--blanco);
+  padding-block: var(--sp-32) var(--sp-24);
+}
+.hero .acciones { display: flex; gap: var(--sp-4); flex-wrap: wrap; margin-top: var(--sp-8); }
+
+/* ── Tarjetas ─────────────────────────────────────────────────────────── */
+
+.tarjeta {
+  background: var(--blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-l);
+  padding: var(--sp-8);
+}
+.tarjeta .h3 { margin-bottom: var(--sp-2); }
+.tarjeta p { color: var(--color-texto-suave); margin: 0; }
+.tarjeta.destacada { background: var(--rojo); border-color: var(--rojo); color: var(--blanco); }
+.tarjeta.destacada .h3, .tarjeta.destacada p { color: var(--blanco); }
+
+.numero {
+  width: 56px; height: 56px;
+  border-radius: var(--pill);
+  background: var(--rojo);
+  color: var(--blanco);
+  font-weight: var(--peso-titulo);
+  font-size: 24px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: var(--sp-4);
+}
+
+/* Dato grande */
+.dato {
+  font-size: clamp(56px, 8vw, 96px);
+  font-weight: var(--peso-titulo);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--rojo);
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+}
+.seccion.azul .dato, .seccion.roja .dato { color: var(--blanco); }
+.dato-label { font-weight: var(--peso-sub); margin: var(--sp-2) 0 0; }
+
+/* ── Chips ────────────────────────────────────────────────────────────── */
+
+.chip {
+  display: inline-block;
+  font-size: var(--texto-chico);
+  font-weight: var(--peso-sub);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 7px 18px;
+  border-radius: var(--pill);
+  background: var(--rojo);
+  color: var(--blanco);
+}
+.chip.azul { background: var(--azul); }
+.chip.linea { background: transparent; color: var(--blanco); box-shadow: inset 0 0 0 2px rgba(255,255,255,.55); }
+
+/* ── Formularios ──────────────────────────────────────────────────────── */
+
+.campo { display: flex; flex-direction: column; gap: var(--sp-2); }
+.campo label { font-weight: var(--peso-sub); font-size: var(--texto-chico); }
+.campo input, .campo select, .campo textarea {
+  font-family: var(--fuente);
+  font-size: var(--texto-cuerpo);
+  font-weight: var(--peso-cuerpo);
+  color: var(--color-texto);
+  background: var(--blanco);
+  padding: 14px 18px;
+  border: 2px solid var(--color-borde);
+  border-radius: var(--radio-s);
+  width: 100%;
+}
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+  border-color: var(--azul);
+  outline: none;
+}
+.campo .error { color: var(--rojo); font-size: var(--texto-chico); font-weight: var(--peso-sub); }
+
+/* ── Tablas ───────────────────────────────────────────────────────────── */
+
+.tabla-scroll { overflow-x: auto; }
+table.tabla { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+table.tabla th, table.tabla td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--color-borde); }
+table.tabla th { font-weight: var(--peso-sub); color: var(--azul); font-size: var(--texto-chico); text-transform: uppercase; letter-spacing: .06em; }
+
+/* ── Pie ──────────────────────────────────────────────────────────────── */
+
+.pie {
+  background: var(--azul);
+  color: var(--blanco);
+  padding-block: var(--sp-16) var(--sp-8);
+}
+.pie a { color: var(--blanco); opacity: .88; }
+.pie .legal {
+  margin-top: var(--sp-8);
+  padding-top: var(--sp-6);
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  font-size: var(--texto-chico);
+  opacity: .8;
+}
+
+/* ── Accesibilidad ────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .btn:hover { transform: none; }
+}
+
+@media (max-width: 640px) {
+  .seccion { padding-block: var(--sp-16); }
+  .hero { padding-block: var(--sp-24) var(--sp-16); }
+}
