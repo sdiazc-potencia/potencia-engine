@@ -1,0 +1,67 @@
+<!-- @dsCard group="Slides de carrusel" -->
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Patrón: Tokens del sistema</title>
+<link rel="stylesheet" href="../fonts.css">
+<link rel="stylesheet" href="../brand.css">
+</head>
+<body>
+  <div class="slide" style="gap: 26px;">
+    <div class="glow limpio"></div>
+
+    <div class="wordmark">POS Terominds</div>
+
+    <h2 class="titulo" style="font-size: 46px;">Tokens y componentes</h2>
+
+    <div style="display: flex; gap: 14px;">
+      <div style="flex:1; background: var(--verde-marca); color: var(--crema); border-radius: 18px; padding: 20px;">
+        <b style="font-size: 24px; font-weight: 600;">Marca</b>
+        <div style="font-size: 19px; opacity: .9; line-height: 1.55; margin-top: 6px;">#2B6945<br>el del logo<br>--verde-marca</div>
+      </div>
+      <div style="flex:1; background: var(--verde-oscuro); color: var(--crema); border-radius: 18px; padding: 20px;">
+        <b style="font-size: 24px; font-weight: 600;">Oscuro</b>
+        <div style="font-size: 19px; opacity: .9; line-height: 1.55; margin-top: 6px;">#1A4732<br>titulares<br>--verde-oscuro</div>
+      </div>
+      <div style="flex:1; background: var(--arena); color: var(--arena-texto); border-radius: 18px; padding: 20px;">
+        <b style="font-size: 24px; font-weight: 600;">Arena</b>
+        <div style="font-size: 19px; line-height: 1.55; margin-top: 6px;">#F2C98C<br>acento<br>--arena</div>
+      </div>
+      <div style="flex:1; background: var(--crema-clara); color: var(--tinta); border: 2px solid var(--linea); border-radius: 18px; padding: 20px;">
+        <b style="font-size: 24px; font-weight: 600;">Crema</b>
+        <div style="font-size: 19px; color: var(--tinta-suave); line-height: 1.55; margin-top: 6px;">#F8F5F1<br>fondo<br>--crema</div>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 20px; align-items: baseline; flex-wrap: wrap;">
+      <span style="font-weight: 400; font-size: 32px;">Inter 400</span>
+      <span style="font-weight: 600; font-size: 32px;">Inter 600</span>
+      <span style="font-weight: 700; font-size: 32px;">Inter 700</span>
+      <span class="acento-italic" style="font-size: 34px; color: var(--verde-marca);">Source Serif itálica</span>
+    </div>
+
+    <div class="tag-row">
+      <span class="tag activo">.tag.activo</span>
+      <span class="tag">.tag</span>
+      <span class="incluido">.incluido</span>
+      <span class="pill llena" style="font-size: 20px; padding: 10px 26px;">.pill.llena</span>
+      <span class="pill" style="font-size: 20px; padding: 10px 26px;">.pill</span>
+    </div>
+
+    <div class="card">
+      <div class="icono">1</div>
+      <div class="contenido">
+        <p class="card-titulo">.card</p>
+        <p class="card-texto">Mismos nombres de clase que el resto de las marcas del repo.</p>
+      </div>
+      <div class="num-derecha">01</div>
+    </div>
+
+    <p class="cuerpo" style="font-size: 23px;">Fondos: .slide (crema) &middot; .slide.verde &middot; .slide.marca &middot; .slide.arena &mdash; redefinen los tokens solos.</p>
+    <p class="cuerpo" style="font-size: 23px;">El badge va siempre con esquinas redondeadas al ~26%. El logo no se altera.</p>
+
+    <div class="footer-marca"><div class="wordmark chico">POS Terominds</div></div>
+  </div>
+</body>
+</html>

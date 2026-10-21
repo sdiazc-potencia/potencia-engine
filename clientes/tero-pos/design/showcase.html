@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tero POS Design System</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+  :root {
+    --verde-marca: #2b6945;
+    --verde-oscuro: #1a4732;
+    --arena: #f2c98c;
+    --arena-texto: #4f3222;
+    --crema: #f8f5f1;
+    --tinta: #172531;
+
+    --bg: #f8f5f1;
+    --panel: #fdfdfc;
+    --ink: #172531;
+    --muted: #535f6e;
+    --titulo: #1a4732;
+    --linea: #e4ddd2;
+
+    --fuente: "Inter", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+    --serif: "Source Serif 4", ui-serif, Georgia, serif;
+    --tracking: -0.045em;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #10231a; --panel: #18301f; --ink: #eef2ea;
+      --muted: #a6b5a8; --titulo: #cfe6d5; --linea: #2b4434;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #10231a; --panel: #18301f; --ink: #eef2ea;
+    --muted: #a6b5a8; --titulo: #cfe6d5; --linea: #2b4434;
+  }
+  :root[data-theme="light"] {
+    --bg: #f8f5f1; --panel: #fdfdfc; --ink: #172531;
+    --muted: #535f6e; --titulo: #1a4732; --linea: #e4ddd2;
+  }
+
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    font-family: var(--fuente);
+    background: var(--bg);
+    color: var(--ink);
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 32px 20px 90px; }
+
+  /* hero */
+  .hero {
+    background: var(--verde-oscuro);
+    color: var(--crema);
+    border-radius: 28px;
+    padding: 54px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 620px 520px at 92% 8%, rgba(144,218,174,.20), transparent 62%),
+                radial-gradient(ellipse 520px 440px at 2% 96%, rgba(242,201,140,.16), transparent 60%);
+  }
+  .hero > * { position: relative; z-index: 1; }
+  .lockup { display: flex; align-items: center; gap: 16px; }
+  .lockup img { width: 54px; height: 54px; border-radius: 14px; display: block; }
+  .lockup span { font-weight: 700; font-size: 24px; letter-spacing: -0.01em; }
+  .hero h1 {
+    font-size: clamp(34px, 5.4vw, 56px);
+    font-weight: 600; line-height: 1.04; letter-spacing: var(--tracking);
+    margin-top: 30px; text-wrap: balance;
+  }
+  .hero h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; }
+  .hero p { margin-top: 14px; max-width: 580px; color: rgba(248,245,241,.82); }
+  .chips { display: flex; gap: 9px; flex-wrap: wrap; margin-top: 26px; }
+  .chip {
+    font-size: 12.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    padding: 6px 15px; border-radius: 999px;
+    background: rgba(255,255,255,.12); box-shadow: inset 0 0 0 1.5px rgba(248,245,241,.42);
+  }
+  .chip.arena { background: var(--arena); color: var(--arena-texto); box-shadow: none; }
+
+  section { margin-top: 66px; }
+  .eyebrow {
+    font-size: 12.5px; font-weight: 700; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--verde-marca);
+  }
+  :root[data-theme="dark"] .eyebrow { color: var(--arena); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .eyebrow { color: var(--arena); } }
+  h2 {
+    font-size: clamp(25px, 3.4vw, 36px); font-weight: 600;
+    letter-spacing: var(--tracking); line-height: 1.1; color: var(--titulo);
+    margin-top: 7px; text-wrap: balance;
+  }
+  h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; }
+  .intro { color: var(--muted); max-width: 64ch; margin-top: 11px; }
+
+  .grid { display: grid; gap: 16px; margin-top: 28px; }
+  .g2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); }
+  .g3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 215px), 1fr)); }
+  .g4 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr)); }
+
+  .card {
+    background: var(--panel); border: 1px solid var(--linea);
+    border-radius: 20px; padding: 24px;
+  }
+  .card h3 { font-size: 16px; font-weight: 600; letter-spacing: -0.015em; color: var(--titulo); }
+  .card p { font-size: 14.5px; color: var(--muted); margin-top: 5px; }
+  code {
+    font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+    font-size: .88em; background: color-mix(in srgb, var(--verde-marca) 11%, transparent);
+    padding: 2px 7px; border-radius: 6px; color: var(--titulo);
+  }
+
+  /* swatches */
+  .sw { border-radius: 20px; padding: 20px; min-height: 148px; display: flex; flex-direction: column; justify-content: space-between; }
+  .sw b { font-weight: 600; font-size: 17px; letter-spacing: -0.015em; }
+  .sw .v { font-size: 13px; line-height: 1.65; opacity: .9; font-variant-numeric: tabular-nums; }
+
+  /* logo */
+  .logo-row { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-end; margin-top: 26px; }
+  .logo-box { border-radius: 20px; padding: 26px; display: flex; flex-direction: column; align-items: center; gap: 14px; flex: 1; min-width: 150px; }
+  .logo-box img { display: block; border-radius: 26%; }
+  .logo-box small { font-size: 12px; font-weight: 600; letter-spacing: .04em; }
+  .ok { color: #2b6945; } .no { color: #c7523d; }
+  .reglas { display: grid; gap: 9px; margin-top: 22px; }
+  .regla { display: flex; gap: 11px; font-size: 15px; align-items: baseline; }
+  .regla b { font-weight: 700; flex: none; }
+
+  /* tipografia */
+  .tipo { background: var(--panel); border: 1px solid var(--linea); border-radius: 20px; padding: 32px; margin-top: 26px; }
+  .tipo .muestra { font-size: clamp(28px, 4.6vw, 46px); font-weight: 600; letter-spacing: var(--tracking); line-height: 1.05; color: var(--titulo); text-wrap: balance; }
+  .tipo .muestra em { font-family: var(--serif); font-style: italic; font-weight: 400; }
+  .pesos { display: flex; gap: 26px; flex-wrap: wrap; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--linea); }
+  .pesos div { font-size: 23px; }
+  .pesos span { display: block; font-size: 11.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
+
+  /* patrones */
+  .slides { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 215px), 1fr)); gap: 16px; margin-top: 28px; }
+  .slides figure { margin: 0; }
+  .slides img { width: 100%; border-radius: 14px; border: 1px solid var(--linea); display: block; }
+  .slides figcaption { font-size: 12.5px; color: var(--muted); margin-top: 8px; font-weight: 600; }
+
+  footer { margin-top: 74px; padding-top: 22px; border-top: 1px solid var(--linea); color: var(--muted); font-size: 13.5px; display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+  a { color: var(--titulo); }
+  @media (max-width: 620px) { .hero { padding: 34px 26px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="lockup"><img src="marca/tero.svg" alt=""><span>POS Terominds</span></div>
+    <h1>El sistema.<br>Todo <em>medido</em>.</h1>
+    <p>Design system de Tero POS. Los tokens no se inventaron: salieron del sitio en producción.</p>
+    <div class="chips">
+      <span class="chip arena">Verde 2B6945</span>
+      <span class="chip">Inter + Source Serif</span>
+      <span class="chip">1080 × 1350</span>
+    </div>
+  </div>
+
+  <section>
+    <span class="eyebrow">01 · El logo</span>
+    <h2>No se modifica. Punto.</h2>
+    <p class="intro">El archivo oficial es <code>tero.svg</code>, el mismo que sirve el sitio. Se usa tal cual: no se recolorea, no se redibuja, no se recorta el ave.</p>
+    <div class="logo-row">
+      <div class="logo-box" style="background:var(--crema); border:1px solid var(--linea)">
+        <img src="marca/tero.svg" width="88" height="88" alt="Badge Tero sobre crema">
+        <small class="ok">✓ sobre crema</small>
+      </div>
+      <div class="logo-box" style="background:#1a4732">
+        <img src="marca/tero.svg" width="88" height="88" alt="Badge Tero sobre verde oscuro">
+        <small style="color:#90daae">✓ sobre verde oscuro</small>
+      </div>
+      <div class="logo-box" style="background:#2b6945">
+        <img src="marca/tero.svg" width="88" height="88" alt="Badge Tero sobre verde marca, sin respaldo" style="opacity:.96">
+        <small style="color:#ffd9d2">✗ se pierde sobre verde marca</small>
+      </div>
+      <div class="logo-box" style="background:#2b6945">
+        <img src="marca/tero.svg" width="88" height="88" alt="Badge Tero con respaldo crema" style="box-shadow:0 0 0 6px #f8f5f1">
+        <small style="color:#f2c98c">✓ con respaldo crema</small>
+      </div>
+    </div>
+    <div class="reglas">
+      <div class="regla"><b>Esquinas</b> siempre redondeadas al ~26% del lado. Es como lo presenta el sitio y ya viene así en <code>brand.css</code>.</div>
+      <div class="regla"><b>Mínimo</b> 44 px de lado. Más chico, el tero no se lee.</div>
+      <div class="regla"><b>Lockup</b> badge + “POS Terominds” en Inter 700. Clase <code>.wordmark</code>.</div>
+      <div class="regla"><b>Nunca</b> aclarar el logo para que contraste: eso se resuelve con el respaldo crema.</div>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">02 · Color</span>
+    <h2>Cuatro valores, medidos del sitio</h2>
+    <p class="intro">Verde dominante, arena como único acento cálido. El crema es el fondo por defecto: la marca respira en claro.</p>
+    <div class="grid g4">
+      <div class="sw" style="background:#2b6945;color:#f8f5f1">
+        <b>Verde marca</b>
+        <div class="v">#2B6945<br>el del logo<br><code style="background:rgba(255,255,255,.14);color:#f8f5f1">--verde-marca</code></div>
+      </div>
+      <div class="sw" style="background:#1a4732;color:#f8f5f1">
+        <b>Verde oscuro</b>
+        <div class="v">#1A4732<br>titulares, fondos<br><code style="background:rgba(255,255,255,.14);color:#f8f5f1">--verde-oscuro</code></div>
+      </div>
+      <div class="sw" style="background:#f2c98c;color:#4f3222">
+        <b>Arena</b>
+        <div class="v">#F2C98C<br>acento, sellos<br><code style="background:rgba(0,0,0,.08);color:#4f3222">--arena</code></div>
+      </div>
+      <div class="sw" style="background:#f8f5f1;color:#172531;border:1px solid #e4ddd2">
+        <b>Crema / tinta</b>
+        <div class="v">#F8F5F1 fondo<br>#172531 texto<br><code>--crema</code></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">03 · Tipografía</span>
+    <h2>El gesto de la <em>marca</em></h2>
+    <p class="intro">Inter con tracking muy apretado en titulares (<code>-0.055em</code>). Y una palabra —una sola— en Source Serif 4 itálica. Si se repite, deja de ser un gesto y se vuelve ruido.</p>
+    <div class="tipo">
+      <div class="muestra">Tu negocio.<br>Todo <em>incluido</em>.</div>
+      <div class="pesos">
+        <div style="font-weight:400">Aa 400<span>cuerpo</span></div>
+        <div style="font-weight:600">Aa 600<span>titulares</span></div>
+        <div style="font-weight:700">Aa 700<span>kickers, lockup</span></div>
+        <div style="font-family:var(--serif);font-style:italic;font-weight:400">Aa itálica<span>el énfasis</span></div>
+      </div>
+    </div>
+    <div class="grid g2" style="margin-top:16px">
+      <div class="card"><h3>Una por slide</h3><p>La serif itálica marca la palabra que importa. Dos en el mismo slide se anulan entre sí.</p></div>
+      <div class="card"><h3>Ojo en el sitio</h3><p>Hoy <code>--font-serif</code> declara Source Serif 4 pero no se carga: cae a Georgia. Conviene cargarla para que web y contenido coincidan.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">04 · Slides</span>
+    <h2>Ocho patrones listos</h2>
+    <p class="intro">Carrusel 1080×1350. Mismos nombres de clase que el resto de las marcas del repo: cambia la estética, no la API. Se renderizan con <code>engine/renderizar_slides.js</code>.</p>
+    <div class="slides">
+      <figure><img src="preview/01-portada.png" alt="Portada"><figcaption>Portada</figcaption></figure>
+      <figure><img src="preview/02-lista-cards.png" alt="Lista de cards"><figcaption>Lista de cards</figcaption></figure>
+      <figure><img src="preview/03-dato.png" alt="Precio"><figcaption>Precio / dato</figcaption></figure>
+      <figure><img src="preview/04-grafico-barras.png" alt="Barras"><figcaption>Barras</figcaption></figure>
+      <figure><img src="preview/05-comparativa.png" alt="Comparativa"><figcaption>Comparativa</figcaption></figure>
+      <figure><img src="preview/06-flujo.png" alt="Flujo"><figcaption>Flujo</figcaption></figure>
+      <figure><img src="preview/07-cta.png" alt="CTA"><figcaption>CTA</figcaption></figure>
+      <figure><img src="preview/tokens.png" alt="Tokens"><figcaption>Tokens</figcaption></figure>
+    </div>
+    <div class="grid g3" style="margin-top:20px">
+      <div class="card"><h3><code>.slide</code></h3><p>Crema. El default: la marca respira en claro.</p></div>
+      <div class="card"><h3><code>.slide.verde</code></h3><p>Verde oscuro. Para precio y momentos de peso.</p></div>
+      <div class="card"><h3><code>.slide.marca</code></h3><p>Verde del logo. Cierres. El badge va con respaldo.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">05 · Voz</span>
+    <h2>Sin letra chica</h2>
+    <p class="intro">Frases de dos tiempos, voseo, el precio adelante. Le habla al que abre el local todos los días, no a un área de sistemas.</p>
+    <div class="grid g2">
+      <div class="card"><h3>Siempre</h3><p>Decir el precio: $50.000 + IVA por máquina. Y aclarar que el hardware va aparte, en 12 cuotas.</p></div>
+      <div class="card"><h3>Nunca</h3><p>Dar a entender que el equipo está incluido en el abono. Es el error más caro que se puede cometer con esta marca.</p></div>
+      <div class="card"><h3>Terín</h3><p>El asistente de WhatsApp es para el dueño y su equipo. No es un bot de pedidos para clientes finales.</p></div>
+      <div class="card"><h3>Datos de ejemplo</h3><p>Si se muestra una pantalla o un número ilustrativo, se aclara. El sitio lo hace en cada bloque.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <span><b style="color:var(--titulo)">Tero POS</b> · Design System v1.0 · octubre 2026</span>
+    <span>Medido de <a href="https://pos.terominds.com">pos.terominds.com</a> · <code>clientes/tero-pos</code></span>
+  </footer>
+</div>
+</body>
+</html>
